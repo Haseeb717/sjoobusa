@@ -1,0 +1,94 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @feedback.company %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @feedback.employee %>
+</p>
+
+<p>
+  <strong>Service type:</strong>
+  <%= @feedback.service_type %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @feedback.role %>
+</p>
+
+<p>
+  <strong>Start at:</strong>
+  <%= @feedback.start_at %>
+</p>
+
+<p>
+  <strong>End at:</strong>
+  <%= @feedback.end_at %>
+</p>
+
+<p>
+  <strong>Commitment score:</strong>
+  <%= @feedback.commitment_score %>
+</p>
+
+<p>
+  <strong>Excellence score:</strong>
+  <%= @feedback.excellence_score %>
+</p>
+
+<p>
+  <strong>Productivity score:</strong>
+  <%= @feedback.productivity_score %>
+</p>
+
+<p>
+  <strong>Customer service score:</strong>
+  <%= @feedback.customer_service_score %>
+</p>
+
+<p>
+  <strong>Leadership score:</strong>
+  <%= @feedback.leadership_score %>
+</p>
+
+<p>
+  <strong>Proactivity score:</strong>
+  <%= @feedback.proactivity_score %>
+</p>
+
+<p>
+  <strong>Teamwork score:</strong>
+  <%= @feedback.teamwork_score %>
+</p>
+
+<p>
+  <strong>Flexibility score:</strong>
+  <%= @feedback.flexibility_score %>
+</p>
+
+<p>
+  <strong>Contribution to sales:</strong>
+  <%= @feedback.contribution_to_sales %>
+</p>
+
+<p>
+  <strong>Unjustified absences:</strong>
+  <%= @feedback.unjustified_absences %>
+</p>
+
+<p>
+  <strong>Warnings:</strong>
+  <%= @feedback.warnings %>
+</p>
+
+<p>
+  <strong>Late for work:</strong>
+  <%= @feedback.late_for_work %>
+</p>
+
+<%= link_to 'Edit', edit_feedback_path(@feedback) %> |
+<%= link_to 'Back', feedbacks_path %>

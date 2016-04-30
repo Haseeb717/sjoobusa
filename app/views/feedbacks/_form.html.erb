@@ -1,0 +1,89 @@
+<%= form_for(@feedback) do |f| %>
+  <% if @feedback.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@feedback.errors.count, "error") %> prohibited this feedback from being saved:</h2>
+
+      <ul>
+      <% @feedback.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :company_id %><br>
+    <%= f.text_field :company_id %>
+  </div>
+  <div class="field">
+    <%= f.label :employee_id %><br>
+    <%= f.text_field :employee_id %>
+  </div>
+  <div class="field">
+    <%= f.label :service_type %><br>
+    <%= f.text_field :service_type %>
+  </div>
+  <div class="field">
+    <%= f.label :role %><br>
+    <%= f.text_field :role %>
+  </div>
+  <div class="field">
+    <%= f.label :start_at %><br>
+    <%= f.date_select :start_at %>
+  </div>
+  <div class="field">
+    <%= f.label :end_at %><br>
+    <%= f.date_select :end_at %>
+  </div>
+  <div class="field">
+    <%= f.label :commitment_score %><br>
+    <%= f.number_field :commitment_score %>
+  </div>
+  <div class="field">
+    <%= f.label :excellence_score %><br>
+    <%= f.number_field :excellence_score %>
+  </div>
+  <div class="field">
+    <%= f.label :productivity_score %><br>
+    <%= f.number_field :productivity_score %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_service_score %><br>
+    <%= f.number_field :customer_service_score %>
+  </div>
+  <div class="field">
+    <%= f.label :leadership_score %><br>
+    <%= f.number_field :leadership_score %>
+  </div>
+  <div class="field">
+    <%= f.label :proactivity_score %><br>
+    <%= f.number_field :proactivity_score %>
+  </div>
+  <div class="field">
+    <%= f.label :teamwork_score %><br>
+    <%= f.number_field :teamwork_score %>
+  </div>
+  <div class="field">
+    <%= f.label :flexibility_score %><br>
+    <%= f.number_field :flexibility_score %>
+  </div>
+  <div class="field">
+    <%= f.label :contribution_to_sales %><br>
+    <%= f.text_field :contribution_to_sales %>
+  </div>
+  <div class="field">
+    <%= f.label :unjustified_absences %><br>
+    <%= f.number_field :unjustified_absences %>
+  </div>
+  <div class="field">
+    <%= f.label :warnings %><br>
+    <%= f.number_field :warnings %>
+  </div>
+  <div class="field">
+    <%= f.label :late_for_work %><br>
+    <%= f.number_field :late_for_work %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

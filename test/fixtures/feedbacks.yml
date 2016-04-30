@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company_id: 
+  employee_id: 
+  service_type: MyString
+  role: MyString
+  start_at: 2016-04-30
+  end_at: 2016-04-30
+  commitment_score: 1
+  excellence_score: 1
+  productivity_score: 1
+  customer_service_score: 1
+  leadership_score: 1
+  proactivity_score: 1
+  teamwork_score: 1
+  flexibility_score: 1
+  contribution_to_sales: 9.99
+  unjustified_absences: 1
+  warnings: 1
+  late_for_work: 1
+
+two:
+  company_id: 
+  employee_id: 
+  service_type: MyString
+  role: MyString
+  start_at: 2016-04-30
+  end_at: 2016-04-30
+  commitment_score: 1
+  excellence_score: 1
+  productivity_score: 1
+  customer_service_score: 1
+  leadership_score: 1
+  proactivity_score: 1
+  teamwork_score: 1
+  flexibility_score: 1
+  contribution_to_sales: 9.99
+  unjustified_absences: 1
+  warnings: 1
+  late_for_work: 1
