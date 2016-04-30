@@ -16,4 +16,5 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require magnific-popup
+//= require owl.carousel
 //= require_tree .
