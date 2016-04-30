@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160430170346) do
+ActiveRecord::Schema.define(version: 20160430173853) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -33,5 +33,31 @@ ActiveRecord::Schema.define(version: 20160430170346) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.integer  "company_id"
+    t.integer  "employee_id"
+    t.string   "service_type"
+    t.string   "role"
+    t.date     "start_at"
+    t.date     "end_at"
+    t.integer  "commitment_score"
+    t.integer  "excellence_score"
+    t.integer  "productivity_score"
+    t.integer  "customer_service_score"
+    t.integer  "leadership_score"
+    t.integer  "proactivity_score"
+    t.integer  "teamwork_score"
+    t.integer  "flexibility_score"
+    t.decimal  "contribution_to_sales"
+    t.integer  "unjustified_absences"
+    t.integer  "warnings"
+    t.integer  "late_for_work"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "feedbacks", ["company_id"], name: "index_feedbacks_on_company_id"
+  add_index "feedbacks", ["employee_id"], name: "index_feedbacks_on_employee_id"
 
 end
