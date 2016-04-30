@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root 'page#home'
+
+  get 'page/home'
+
   resources :feedbacks
   resources :employees
   resources :companies
