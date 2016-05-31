@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :companies
-  root 'page#home'
-
-  get 'page/home'
+  devise_for :companies, :controllers => { registrations: 'registrations' }
 
   resources :feedbacks
   resources :employees
   resources :companies
+
+  root 'page#home'
+
+  get 'page/home'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
