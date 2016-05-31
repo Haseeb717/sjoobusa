@@ -1,189 +1,32 @@
-<div class="site-wrapper">
-
-  <!-- Header -->
-  <header class="header header-menu-fullw">
-
-    <!-- Header Top Bar -->
-    <div class="header-top">
-      <div class="container">
-        <div class="header-top-left">
-          <button class="btn btn-sm btn-default menu-link menu-link__secondary">
-            <i class="fa fa-bars"></i>
-          </button>
-        </div>
-        <div class="header-top-right">
-          <button class="btn btn-sm btn-default menu-link menu-link__tertiary">
-            <i class="fa fa-user"></i>
-          </button>
-          <div class="menu-container">
-            <ul class="header-top-nav header-top-nav__tertiary">
-              <li><a href="#"><i class="fa fa-user-plus"></i> Cadastrar-se</a></li>
-              <li><a href="#"><i class="fa fa-sign-in"></i> Entrar</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Header Top Bar / End -->
-    <div class="header-main">
-      <div class="container">
-        <!-- Logo -->
-        <div class="logo">
-          <a href="#"><%= image_tag "logo.png", alt: "Handyman" %></a>
-        </div>
-        <!-- Logo / End -->
-
-        <button type="button" class="navbar-toggle">
-          <i class="fa fa-bars"></i>
-        </button>
-
-        <!-- Navigation -->
-        <nav class="nav-main">
-          <div class="nav-main-inner">
-            <ul data-breakpoint="992" class="flexnav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">Dúvidas</a></li>
-              <li><a href="#">Contato</a></li>
-            </ul>
-          </div>
-        </nav>
-        <!-- Navigation / End -->
-
-      </div>
-    </div>
+<section class="page-content">
+  <div class="container">
     
-  </header>
-  <!-- Header / End -->
-
-
-  <!-- Main -->
-  <div class="main" role="main">
-
-    <!-- Page Content -->
-    <section class="page-content">
-      <div class="container">
-        
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3">
-            <div class="box">
-              <h3>Entrar</h3>
-              <form action="#" method="POST" role="form">
-                <div class="form-group">
-                  <label>E-mail <span class="required">*</span></label>
-                  <input type="text" class="form-control">
-                </div>
-                <div class="form-group">
-                  <div class="clearfix">
-                    <label class="pull-left">
-                      Senha <span class="required">*</span>
-                    </label>
-                    <span class="pull-right"><a href="#">Esqueceu a senha?</a></span>
-                  </div>
-                  <input type="password" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-primary btn-inline">Entrar</button>&nbsp; &nbsp; &nbsp; 
-                <label for="remember" class="checkbox-inline">
-                  <input type="checkbox" name="remember" id="remember"> Lembre-me
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="box">
+          <h3>Entrar</h3>
+          <form action="#" method="POST" role="form">
+            <div class="form-group">
+              <label>E-mail <span class="required">*</span></label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <div class="clearfix">
+                <label class="pull-left">
+                  Senha <span class="required">*</span>
                 </label>
-              </form>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <!-- Page Content / End -->
-
-    <!-- Footer -->
-    <footer class="footer" id="footer">
-      <div class="footer-widgets">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-4 col-md-4 col-md-offset-3">
-              <!-- Widget :: Contacts Info -->
-              <div class="contacts-widget widget widget__footer">
-                <h3 class="widget-title">Contate-nos</h3>
-                <div class="widget-content">
-                  <ul class="contacts-info-list">
-                    <li>
-                      <i class="fa fa-map-marker"></i>
-                      <div class="info-item">
-                        SJOOBS LTDA, Rua XYZ, Rio de Janeiro - RJ
-                      </div>
-                    </li>
-                    <li>
-                      <i class="fa fa-phone"></i>
-                      <div class="info-item">
-                        +55 21 1234-5678
-                      </div>
-                    </li>
-                    <li>
-                      <i class="fa fa-envelope"></i>
-                      <span class="info-item">
-                        <a href="mailto:info@dan-fisher.com">contato@sjoobs.com.br</a>
-                      </span>
-                    </li>
-                    <li>
-                      <i class="fa fa-clock-o"></i>
-                      <div class="info-item">
-                        Segunda - Sexta 9:00 - 18:00
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+                <span class="pull-right"><a href="#">Esqueceu a senha?</a></span>
               </div>
-              <!-- /Widget :: Contacts Info -->
+              <input type="password" class="form-control">
             </div>
-
-            <div class="clearfix visible-sm"></div>
-
-            <div class="col-sm-4 col-md-4">
-              <!-- Widget :: Newsletter -->
-              <div class="widget_newsletter widget widget__footer">
-                <h3 class="widget-title">Informações</h3>
-                <div class="widget-content">
-                  <p>Digite aqui seu email, assina a newsletter e fique por dentro das novidades!</p>
-
-                  <form action="#" method="POST" id="newsletter-form">
-
-                    <div class="alert alert-success hidden" id="newsletter-alert-success">
-                      <strong>Successo!</strong> Obrigado por assinar a newsletter.
-                    </div>
-                    <div class="alert alert-danger hidden" id="newsletter-alert-error">
-                      <strong>Erro</strong> Ops, houve algum problema.
-                    </div>
-
-                    <div class="form-group">
-                      <input type="email" 
-                        value=""
-                        data-msg-required="Por favor digite seu email."
-                        data-msg-email="Por favor, digite um email válido."
-                        class="form-control"
-                        placeholder="Digite seu email aqui..."
-                        name="subscribe-email"
-                        id="subscribe-email">
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block" data-loading-text="Carregando...">Assinar</button>
-                  </form>
-                </div>
-              </div>
-              <!-- /Widget :: Newsletter -->
-            </div>
-          </div>
+            <button type="submit" class="btn btn-primary btn-inline">Entrar</button>&nbsp; &nbsp; &nbsp; 
+            <label for="remember" class="checkbox-inline">
+              <input type="checkbox" name="remember" id="remember"> Lembre-me
+            </label>
+          </form>
         </div>
       </div>
-      <div class="footer-copyright">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              &copy; 2016  <a href="index.html">SJOOBS</a> &nbsp;| &nbsp;Todos os direitos reservados
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- Footer / End -->
-    
+    </div>
+
   </div>
-  <!-- Main / End -->
-</div>
+</section>
