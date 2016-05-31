@@ -36,6 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     animate-rails (1.0.10)
       rails
     arel (6.0.3)
@@ -88,6 +89,10 @@ GEM
       jquery-ui-rails (= 4.0.3)
       railties (>= 3.1.0)
     json (1.8.3)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     magnific-popup-rails (1.1.0)
@@ -187,6 +192,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-sass-rails
+  letter_opener
   magnific-popup-rails (~> 1.1.0)
   owlcarousel-rails
   rails (= 4.2.6)
