@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :employees
   resources :companies
 
-  root 'page#home'
+  # root 'page#home'
+  root :to => redirect('/companies/sign_in')
 
   get 'page/home'
 
