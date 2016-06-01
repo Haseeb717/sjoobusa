@@ -1,29 +1,63 @@
-<h2>Sign up</h2>
+<section class="page-content">
+  <div class="container">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+        <% unless alert.blank? %>
+          <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+            <strong><%= alert %></strong>
+          </div>
+        <% end %>
+
+        <% unless notice.blank? %>
+          <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+            <strong><%= notice %></strong>
+          </div>
+        <% end %>
+
+        <div class="spacer-lg visible-sm visible-xs"></div>
+
+        <div class="box">
+          <h3>Empresa</h3>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { role: 'form' }) do |f| %>
+            <div class="form-group">
+              <%= f.label :email do %>
+                E-mail <span class="required">*</span>
+              <% end %>
+              <%= f.text_field :email, autofocus: true, class: 'form-control' %>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <%= f.label :password do %>
+                    Senha <span class="required">*</span>
+                  <% end %>
+                  <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <%= f.label :password_confirmation do %>
+                    Confirmar Senha <span class="required">*</span>
+                  <% end %>
+                  <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+                </div>
+              </div>
+            </div>
+
+            <%= f.submit "Cadastrar", class: 'btn btn-primary', style: 'padding: 12px 16px;' %>
+
+            <br /><br />
+            <div class="clearfix">
+              <%= render "devise/shared/links" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</section>
