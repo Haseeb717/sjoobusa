@@ -60,8 +60,24 @@
             </button>
             <div class="menu-container">
               <ul class="header-top-nav header-top-nav__tertiary">
-                <li><a href="#"><i class="fa fa-user-plus"></i> Cadastrar-se</a></li>
-                <li><a href="#"><i class="fa fa-sign-in"></i> Entrar</a></li>
+                <% if company_signed_in? %>
+                  <li>
+                    <%= link_to destroy_company_session_path, method: :delete do %>
+                      <i class="fa fa-sign-out"></i> Sair
+                    <% end %>
+                  </li>
+                <% else %>
+                  <li>
+                    <%= link_to new_company_registration_path do %>
+                      <i class="fa fa-user-plus"></i> Cadastrar-se
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to new_company_session_path do %>
+                      <i class="fa fa-sign-in"></i> Entrar
+                    <% end %>
+                  </li>
+                <% end %>
               </ul>
             </div>
           </div>
