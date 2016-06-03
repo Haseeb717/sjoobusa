@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   root :to => redirect('/companies/sign_in')
 
   get 'page/home'
+  get 'page/contact'
+  get 'page/faq'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
