@@ -1,24 +1,184 @@
-<p id="notice"><%= notice %></p>
+<section class="page-content">
+  <div class="container">
 
-<p>
-  <strong>Cpf:</strong>
-  <%= @employee.cpf %>
-</p>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="spacer visible-sm visible-xs"></div>
+        <div class="team-single-head">
+          <h2><%= @employee.name %></h2>
+        </div>
+        <p>Email: <%= @employee.email %></p>
+        <p>CPF: <%= @employee.cpf %></p>
+        <p>Tel: <%= @employee.phone %></p>
+      </div>
+    </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @employee.name %>
-</p>
+    <hr class="lg">
 
-<p>
-  <strong>Email:</strong>
-  <%= @employee.email %>
-</p>
+    <div class="row">
 
-<p>
-  <strong>Phone:</strong>
-  <%= @employee.phone %>
-</p>
+      <div class="col-md-12">
+        <h3>Pontuação</h3>
 
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+        <br/>
+
+        <h6>Comprometimento</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+            80%
+          </div>
+        </div>
+
+        <h6>Excelência nas atividades</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+            75%
+          </div>
+        </div>
+
+        <h6>Produtividade</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
+            95%
+          </div>
+        </div>
+
+        <h6>Qualidade no atendimento</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+            90%
+          </div>
+        </div>
+
+        <h6>Liderança</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+            85%
+          </div>
+        </div>
+
+        <h6>Pró-atividade</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+            50%
+          </div>
+        </div>
+
+        <h6>Relacionamento</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+            60%
+          </div>
+        </div>
+
+        <h6>Flexibilidade</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+            70%
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="lg">
+
+    <div class="row">
+      <div class="content col-md-12">
+
+        <!-- Additional Info Tabs -->
+        <div class="tabs">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab1-1" data-toggle="tab">Avaliações</a></li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane fade in active" id="tab1-1">
+              <!-- Comments -->
+              <div class="comments-wrapper">
+                <h3>Avaliações (5)</h3>
+                <ol class="commentlist">
+                  <li class="comment">
+                    <div class="comment-wrapper">
+                      <div class="comment-author vcard">
+                        <h5>Empresa Multi Maxx</h5>
+                        <div class="comment-meta">
+                          <a href="#">27 de Outubro de 2015 às 17:45</a>
+                        </div>
+                        <div class="rating-stars">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="comment bypostauthor">
+                    <div class="comment-wrapper">
+                      <div class="comment-author vcard">
+                        <h5>Empresa Trampo Fácil</h5>
+                        <div class="comment-meta">
+                          <a href="#">27 de Outubro de 2015 às 17:45</a>
+                        </div>
+                        <div class="rating-stars">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star-o"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="comment">
+                    <div class="comment-wrapper">
+                      <div class="comment-author vcard">
+                        <h5>Ciclano Company</h5>
+                        <div class="comment-meta">
+                          <a href="#">27 de Outubro de 2015 às 17:45</a>
+                        </div>
+                        <div class="rating-stars">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star-half-o"></i>
+                          <i class="fa fa-star-o"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="comment">
+                    <div class="comment-wrapper">
+                      <div class="comment-author vcard">
+                        <h5>Fulano LTDA</h5>
+                        <div class="comment-meta">
+                          <a href="#">27 de Outubro de 2015 às 17:45</a>
+                        </div>
+                        <div class="rating-stars">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                        </div>
+                      </div>
+
+                    </div>
+                  </li>
+                </ol>
+              </div>
+              <!-- Comments / End -->
+
+            </div>
+          </div>
+        </div>
+        <!-- Additional Info Tabs / End -->
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
