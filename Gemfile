@@ -42,6 +42,8 @@ gem 'autoprefixer-rails'
 
 gem 'jquery-ui-sass-rails'
 
+gem 'jquery-migrate-rails'
+
 gem 'entypo-rails'
 
 gem 'animate-rails'
