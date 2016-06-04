@@ -95,10 +95,15 @@
           <nav class="nav-main">
             <div class="nav-main-inner">
               <ul data-breakpoint="992" class="flexnav">
-                <li class="active"><%= link_to "Home", new_company_session_path %></li>
-                <li><%= link_to "Planos", page_pricing_path %></li>
-                <li><%= link_to "Dúvidas", page_faq_path %></li>
-                <li><%= link_to "Contato", page_contact_path %></li>
+                <% if company_signed_in? %>
+                  <li class="active"><%= link_to "Avaliações", feedbacks_path %></li>
+                  <li><%= link_to "Funcionários", employees_path %></li>
+                <% else %>
+                  <li class="active"><%= link_to "Home", new_company_session_path %></li>
+                  <li><%= link_to "Planos", page_pricing_path %></li>
+                  <li><%= link_to "Dúvidas", page_faq_path %></li>
+                  <li><%= link_to "Contato", page_contact_path %></li>
+                <% end %>
               </ul>
             </div>
           </nav>
