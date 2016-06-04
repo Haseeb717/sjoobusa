@@ -1,33 +1,43 @@
-<p id="notice"><%= notice %></p>
+<section class="page-content">
+  <div class="container">
 
-<h1>Listing Employees</h1>
+    <div class="job_listings">
+      <ul class="job_listings">
+        <% @employees.each do |employee| %>
+          <li class="job_listing">
+            <%= link_to employee do %>
+              <div class="job_img">
+                <%= image_tag "samples/#{employee.photo}", alt: employee.name, class: 'company_logo' %>
+              </div>
+              <div class="position" style="width: 40%;">
+                <h3><%= employee.name %></h3>
+                <div class="company">
+                  <strong><%= employee.cpf %></strong>
+                </div>
+              </div>
+              <div class="location">
+                <i class="fa fa-envelope"></i> <%= employee.email %>
+              </div>
+              <div class="rating">
+                <div class="rating-stars">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half-o"></i>
+                </div>
+                <div class="reviews-num"><%= employee.feedbacks.count %> Avaliações</div>
+              </div>
+              <ul class="meta">
+                <li class="date">
+                  <%= distance_of_time_in_words(Time.now, employee.created_at) %>
+                </li>
+              </ul>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Cpf</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @employees.each do |employee| %>
-      <tr>
-        <td><%= employee.cpf %></td>
-        <td><%= employee.name %></td>
-        <td><%= employee.email %></td>
-        <td><%= employee.phone %></td>
-        <td><%= link_to 'Show', employee %></td>
-        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Employee', new_employee_path %>
+  </div>
+</section>
