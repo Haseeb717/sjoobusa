@@ -845,7 +845,7 @@ div {
 	text-align: center;
 	img {
 		@extend %extend_11;
-		margin: 0 0 20px 0;
+		margin: 0 0 20px 20px;
 	}
 	.img-circle {
 		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)

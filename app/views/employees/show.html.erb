@@ -2,7 +2,12 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-2">
+        <figure class="alignnone">
+          <%= image_tag "samples/#{@employee.photo}", alt: @employee.name %>
+        </figure>
+      </div>
+      <div class="col-md-10">
         <div class="spacer visible-sm visible-xs"></div>
         <div class="team-single-head">
           <h2><%= @employee.name %></h2>
@@ -10,6 +15,7 @@
         <p>Email: <%= @employee.email %></p>
         <p>CPF: <%= @employee.cpf %></p>
         <p>Tel: <%= @employee.phone %></p>
+        <p>Photo: <%= @employee.photo %></p>
       </div>
     </div>
 
