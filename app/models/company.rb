@@ -4,4 +4,8 @@ class Company < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
+
+  validates :cnpj, presence: true
+  validates :name, presence: true
+  validates :trade, presence: true
 end
