@@ -56,6 +56,8 @@ gem 'devise'
 
 gem "letter_opener"
 
+gem 'brazilian-rails'
+
 gem 'rails-i18n', '~> 4.0.0'
 
 group :development, :test do
