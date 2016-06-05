@@ -6,6 +6,7 @@ class Company < ActiveRecord::Base
          :confirmable
 
   validates :cnpj, presence: true
+  usar_como_cnpj :cnpj
   validates :name, presence: true
   validates :trade, presence: true
 end
