@@ -5,7 +5,7 @@ class FeedbacksController < ApplicationController
   # GET /feedbacks
   # GET /feedbacks.json
   def index
-    @feedbacks = Feedback.all
+    @feedbacks = Feedback.where(company_id: current_company.id)
   end
 
   # GET /feedbacks/1
