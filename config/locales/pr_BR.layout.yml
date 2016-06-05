@@ -1,0 +1,6 @@
+pt-BR:
+  layouts:
+    application:
+      sign_in: Entrar
+      sign_up: Cadastre-se
+      sign_out: Sair

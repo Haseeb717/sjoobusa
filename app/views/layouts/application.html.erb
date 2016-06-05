@@ -58,18 +58,18 @@
                 <% if company_signed_in? %>
                   <li>
                     <%= link_to destroy_company_session_path, method: :delete do %>
-                      <i class="fa fa-sign-out"></i> Sair
+                      <i class="fa fa-sign-out"></i> <%= t(".sign_out", :default => "Sign out") %>
                     <% end %>
                   </li>
                 <% else %>
                   <li>
                     <%= link_to new_company_registration_path do %>
-                      <i class="fa fa-user-plus"></i> Cadastrar-se
+                      <i class="fa fa-user-plus"></i> <%= t(".sign_up", :default => "Sign up") %>
                     <% end %>
                   </li>
                   <li>
                     <%= link_to new_company_session_path do %>
-                      <i class="fa fa-sign-in"></i> Entrar
+                      <i class="fa fa-sign-in"></i> <%= t(".sign_in", :default => "Sign in") %>
                     <% end %>
                   </li>
                 <% end %>
