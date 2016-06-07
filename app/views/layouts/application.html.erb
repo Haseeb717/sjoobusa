@@ -96,13 +96,13 @@
             <div class="nav-main-inner">
               <ul data-breakpoint="992" class="flexnav">
                 <% if company_signed_in? %>
-                  <li class="active"><%= link_to "Avaliações", feedbacks_path %></li>
-                  <li><%= link_to "Profissionais", employees_path %></li>
+                  <li class="<%= is_active?(feedbacks_path) %>"><%= link_to "Avaliações", feedbacks_path %></li>
+                  <li class="<%= is_active?(employees_path) %>"><%= link_to "Profissionais", employees_path %></li>
                 <% else %>
-                  <li class="active"><%= link_to "Home", new_company_session_path %></li>
-                  <li><%= link_to "Planos", page_pricing_path %></li>
-                  <li><%= link_to "Dúvidas", page_faq_path %></li>
-                  <li><%= link_to "Contato", page_contact_path %></li>
+                  <li class="<%= is_active?(new_company_session_path) %>"><%= link_to "Home", new_company_session_path %></li>
+                  <li class="<%= is_active?(page_pricing_path) %>"><%= link_to "Planos", page_pricing_path %></li>
+                  <li class="<%= is_active?(page_faq_path) %>"><%= link_to "Dúvidas", page_faq_path %></li>
+                  <li class="<%= is_active?(page_contact_path) %>"><%= link_to "Contato", page_contact_path %></li>
                 <% end %>
               </ul>
             </div>
