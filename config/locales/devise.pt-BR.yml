@@ -3,7 +3,7 @@
 pt-BR:
   devise:
     confirmations:
-      confirmed: 'Sua conta foi confirmada com sucesso. Você está logado.'
+      confirmed: 'Sua conta foi confirmada com sucesso.'
       send_instructions: 'Dentro de minutos, você receberá um e-mail com instruções para a confirmação da sua conta.'
       send_paranoid_instructions: 'Se o seu endereço de e-mail estiver cadastrado, você receberá uma mensagem com instruções para confirmação da sua conta.'
     failure:
@@ -18,7 +18,11 @@ pt-BR:
       unconfirmed: 'Antes de continuar, confirme a sua conta.'
     mailer:
       confirmation_instructions:
-        subject: 'Instruções de confirmação'
+        subject: 'SJOOBS - Instruções de confirmação da conta'
+        action: 'Para confirmar e ativar o seu registro, clique aqui.'
+        greeting: 'Bem vindo ao SJOOBS!'
+        instruction: 'Somos o primeiro sistema de proteção ao empregador do mundo e temos o imenso prazer de ter sua empresa associda aos nossos serviços. Todo nosso processo de pré e pós registro passa por uma checagem para garantir a segurança e veracidade das informações fornecidas à sua empresa em nosso sistema.'
+        footer: 'A equipe do SJOOBS agradece. Qualquer dúvida entre em contato, teremos o maior prazer em atendê-lo(a).'
       reset_password_instructions:
         subject: 'Instruções de troca de senha'
       unlock_instructions:
