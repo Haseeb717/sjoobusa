@@ -1,0 +1,30 @@
+<section class="page-content">
+  <div class="container">
+
+    <div class="col-md-12 col-md-offset-5">
+      <h3>Profissionais</h3>
+    </div>
+
+    <div class="spacer-xl"></div>
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="spacer-lg visible-sm visible-xs"></div>
+
+        <div class="box">
+          <%= form_for(@employee, url: search_result_employees_path, html: { role: 'form' }) do |f| %>
+            <div class="form-group">
+              <%= f.label :cpf do %>
+                CPF <span class="required">*</span>
+              <% end %>
+              <%= f.text_field :cpf, class: 'form-control', placeholder: 'CPF' %>
+            </div>
+
+            <%= f.submit "Buscar", class: 'btn btn-primary', style: 'padding: 12px 16px;' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

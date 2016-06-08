@@ -8,6 +8,14 @@ class EmployeesController < ApplicationController
     @employees = Employee.all
   end
 
+  def search
+    @employee = Employee.new
+  end
+
+  def search_result
+    @employees = Employee.where(employee_params)
+  end
+
   # GET /employees/1
   # GET /employees/1.json
   def show

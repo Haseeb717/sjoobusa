@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   devise_for :companies, :controllers => { registrations: 'registrations' }
 
   resources :feedbacks
-  resources :employees
+
+  resources :employees do
+    get 'search', on: :collection
+    post 'search_result', on: :collection
+  end
+
   resources :companies
 
   # root 'page#home'
