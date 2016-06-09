@@ -1,5 +1,83 @@
-<h1>New Employee</h1>
+<div class="page-content">
+  <div class="container">
 
-<%= render 'form' %>
+    <div class="col-md-12 col-md-offset-4">
+      <h3>Cadastrar Profissional</h3>
+    </div>
 
-<%= link_to 'Back', employees_path %>
+    <div class="spacer-lg"></div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+
+        <% if @employee.errors.any? %>
+          <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+            <ul>
+              <% @employee.errors.full_messages.each do |message| %>
+                <li>
+                  <strong><%= message %></strong>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <%= form_for @employee, :html => {id: 'submit-job-form', class: 'job-manager-form', :multipart => true } do |f| %>
+          <fieldset>
+            <%= f.label :cpf do %>
+              CPF <span class="required">*</span>
+            <% end %>
+            <div class="field">
+              <%= f.text_field :cpf, class: 'form-control', placeholder: 'CPF' %>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-job_title">
+            <%= f.label :name do %>
+              Nome <span class="required">*</span>
+            <% end %>
+            <div class="field">
+              <%= f.text_field :name, class: 'form-control', placeholder: 'Ex: João da Silva' %>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-job_location">
+            <%= f.label :email do %>
+              E-mail <span class="required">*</span>
+            <% end %>
+            <div class="field">
+              <%= f.text_field :email, class: 'form-control', placeholder: 'Ex: joao.silva@empresa.com.br' %>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-job_location">
+            <%= f.label :phone do %>
+              Telefone <small>(Opcional)</small>
+            <% end %>
+            <div class="field">
+              <%= f.text_field :phone, class: 'form-control', placeholder: 'Ex: (11) 98765-1234' %>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-company_logo">
+            <%= f.label :photo do %>
+              Foto <small>(Opcional)</small>
+            <% end %>
+            <div class="field">
+              <%= f.file_field :photo, class: 'form-control' %>
+              <small class="description">Tamanha máximo: 5 MB. Formatos permitidos: jpg, gif, png.</small>
+            </div>
+          </fieldset>
+
+          <div class="spacer"></div>
+
+          <p>
+            <%= f.submit 'Salvar', class: 'btn btn-primary' %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
