@@ -1,16 +1,43 @@
-<h2>Forgot your password?</h2>
+<section class="page-content">
+  <div class="container">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+        <% unless alert.blank? %>
+          <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+            <strong><%= alert %></strong>
+          </div>
+        <% end %>
+
+        <% unless notice.blank? %>
+          <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+            <strong><%= notice %></strong>
+          </div>
+        <% end %>
+
+        <div class="box">
+          <h3>Esqueceu sua senha?</h3>
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { role: 'form' }) do |f| %>
+            <div class="form-group">
+              <%= f.label :email do %>
+                E-mail <span class="required">*</span>
+              <% end %>
+              <%= f.text_field :email, autofocus: true, class: 'form-control' %>
+            </div>
+
+            <%= f.submit "Recuperar senha", class: 'btn btn-primary btn-inline', style: 'width: 200px;' %>&nbsp; &nbsp; &nbsp;
+
+            <br /><br />
+            <div class="clearfix">
+              <%= render "devise/shared/links" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</section>
