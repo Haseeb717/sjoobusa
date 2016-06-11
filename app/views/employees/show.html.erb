@@ -2,6 +2,22 @@
   <div class="container">
 
     <div class="row">
+      <div class="col-md-12">
+        <fieldset>
+          <div class="field account-sign-in">
+            <p>
+              <%= link_to new_feedback_path, class: 'btn btn-primary btn-sm' do %>
+                <i class="fa fa-plus"></i> Avaliar profissional
+              <% end %>
+            </p>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="row">
       <div class="col-md-2">
         <figure class="alignnone">
           <%= image_tag "samples/#{@employee.photo}", alt: @employee.name %>
@@ -15,7 +31,6 @@
         <p>Email: <%= @employee.email %></p>
         <p>CPF: <%= @employee.cpf %></p>
         <p>Tel: <%= @employee.phone %></p>
-        <p>Photo: <%= @employee.photo %></p>
       </div>
     </div>
 
