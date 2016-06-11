@@ -14,43 +14,53 @@
     <h3>Minhas avaliações</h3>
     <br />
 
-    <div class="job_listings">
-      <ul class="job_listings">
-        <% @feedbacks.each do |feedback| %>
-          <li class="job_listing">
-            <%= link_to feedback do %>
-              <div class="job_img">
-                <%= image_tag "samples/#{feedback.employee.photo}", alt: feedback.employee.name, class: 'company_logo' %>
-              </div>
-              <div class="position" style="width: 40%;">
-                <h3><%= feedback.employee.name %></h3>
-                <div class="company">
-                  <strong><%= "#{feedback.service_type} / #{feedback.role}" %></strong>
+    <% if @feedbacks.count == 0 %>
+      <div class="row">
+        <div class="col-md-12">
+            <p>
+              Você ainda não avaliou nenhum profissional, caso deseje avaliar, <%= link_to 'clique aqui', new_employee_path %>.
+            </p>
+        </div>
+      </div>
+    <% else %>
+      <div class="job_listings">
+        <ul class="job_listings">
+          <% @feedbacks.each do |feedback| %>
+            <li class="job_listing">
+              <%= link_to feedback do %>
+                <div class="job_img">
+                  <%= image_tag "samples/#{feedback.employee.photo}", alt: feedback.employee.name, class: 'company_logo' %>
                 </div>
-              </div>
-              <div class="location">
-                <i class="fa fa-tag"></i> <%= feedback.employee.cpf %>
-              </div>
-              <div class="rating">
-                <div class="rating-stars">
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-half-o"></i>
+                <div class="position" style="width: 40%;">
+                  <h3><%= feedback.employee.name %></h3>
+                  <div class="company">
+                    <strong><%= "#{feedback.service_type} / #{feedback.role}" %></strong>
+                  </div>
                 </div>
-                <div class="reviews-num"><%= feedback.employee.feedbacks.count %> Avaliações</div>
-              </div>
-              <ul class="meta">
-                <li class="date">
-                  <%= distance_of_time_in_words(Time.now, feedback.employee.created_at) %>
-                </li>
-              </ul>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+                <div class="location">
+                  <i class="fa fa-tag"></i> <%= feedback.employee.cpf %>
+                </div>
+                <div class="rating">
+                  <div class="rating-stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                  </div>
+                  <div class="reviews-num"><%= feedback.employee.feedbacks.count %> Avaliações</div>
+                </div>
+                <ul class="meta">
+                  <li class="date">
+                    <%= distance_of_time_in_words(Time.now, feedback.employee.created_at) %>
+                  </li>
+                </ul>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
   </div>
 </section>
