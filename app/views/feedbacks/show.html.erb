@@ -90,5 +90,5 @@
   <%= @feedback.late_for_work %>
 </p>
 
-<%= link_to 'Edit', edit_feedback_path(@feedback) %> |
+<%= link_to 'Edit', edit_employee_feedback_path(employee_id: @feedback.employee_id, id: @feedback.id) %> |
 <%= link_to 'Back', feedbacks_path %>

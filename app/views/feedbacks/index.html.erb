@@ -27,7 +27,7 @@
         <ul class="job_listings">
           <% @feedbacks.each do |feedback| %>
             <li class="job_listing">
-              <%= link_to feedback do %>
+              <%= link_to employee_feedback_path(employee_id: feedback.employee_id, id: feedback.id) do %>
                 <div class="job_img">
                   <%= image_tag "samples/#{feedback.employee.photo}", alt: feedback.employee.name, class: 'company_logo' %>
                 </div>

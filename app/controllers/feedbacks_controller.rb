@@ -27,6 +27,9 @@ class FeedbacksController < ApplicationController
   def create
     @feedback = Feedback.new(feedback_params)
 
+    @feedback.company_id = current_company.id
+    @feedback.employee_id = params[:employee_id]
+
     respond_to do |format|
       if @feedback.save
         format.html { redirect_to @feedback, notice: 'Feedback was successfully created.' }

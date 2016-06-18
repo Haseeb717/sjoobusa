@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   devise_for :companies, :controllers => { registrations: 'registrations' }
 
-  resources :feedbacks
+  resources :feedbacks, only: [:index]
 
   resources :employees do
     get 'search', on: :collection
     post 'search_result', on: :collection
+
+    resources :feedbacks, except: [:index]
   end
 
   resources :companies
