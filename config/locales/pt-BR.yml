@@ -6,6 +6,40 @@ pt-BR:
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
+    attributes:
+      company:
+        name: Razão Social
+        trade: Nome Fantasia
+        cnpj: CNPJ
+        state_identification: Inscrição Estadual
+        area: Área de Atuação
+        email: E-mail
+        phone: Telefone
+        password: Senha
+        password_confirmation: Confirmar Senha
+      employee:
+        cpf: CPF
+        name: Nome
+        email: E-mail
+        phone: Telefone
+        photo: Foto
+      feedback:
+        service_type: Tipo de serviço
+        role: Cargo ou Função
+        start_at: CPF
+        end_at: CPF
+        commitment_score: Comprometimento
+        excellence_score: Excelência nas atividades
+        productivity_score: Produtividade
+        customer_service_score: Qualidade de atentimento ao cliente
+        leadership_score: Liderança
+        proactivity_score: Proatividade
+        teamwork_score: Relacionamento com a equipe
+        flexibility_score: Flexibilidade
+        contribution_to_sales: Contribuição em vendas
+        unjustified_absences: Faltas não justificadas
+        warnings: Advertências
+        late_for_work: Atraso de horário
   date:
     abbr_day_names:
     - Dom
