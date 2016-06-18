@@ -1,5 +1,157 @@
-<h1>New Feedback</h1>
+<section class="page-content">
+  <div class="container">
 
-<%= render 'form' %>
+    <div class="col-md-12 col-md-offset-4">
+      <h3>Adicionar Avaliação</h3>
+    </div>
 
-<%= link_to 'Back', feedbacks_path %>
+    <div class="spacer-lg"></div>
+
+    <div class="row">
+      <!-- <div class="col-md-6 col-md-offset-3"> -->
+      <div class="col-md-8 col-md-offset-2">
+
+        <% if @feedback.errors.any? %>
+          <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+            <ul>
+              <% @feedback.errors.full_messages.each do |message| %>
+                <li>
+                  <strong><%= message %></strong>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="spacer-lg visible-sm visible-xs"></div>
+
+        <%= form_for @feedback, :url => {:controller => "feedbacks", :action => "create"}, :html => {id: 'submit-job-form', class: 'job-manager-form', :multipart => true } do |f| %>
+
+          <fieldset>
+            <%= f.label :service_type do %>
+              Tipo <span class="required">*</span>
+            <% end %>
+            <div class="field">
+              <%= f.text_field :service_type, class: 'form-control', placeholder: 'Tipo' %>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <%= f.label :role %>
+            <div class="field">
+              <%= f.text_field :role, class: 'form-control', placeholder: 'Role' %>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <%= f.label :start_at %>
+            <div class="field">
+              <%= f.date_select :start_at, class: 'form-control' %>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <%= f.label :end_at %>
+            <div class="field">
+              <%= f.date_select :end_at, class: 'form-control' %>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-job_category">
+            <%= f.label :commitment_score %>
+            <div class="field select-style">
+              <%= f.select(:commitment_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], { include_blank: false }, class: 'form-control') %>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-job_category">
+            <%= f.label :excellence_score %>
+            <div class="field select-style">
+              <%= f.select(:excellence_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], { include_blank: false }, class: 'form-control') %>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-job_category">
+            <%= f.label :productivity_score %>
+            <div class="field select-style">
+              <%= f.select(:productivity_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], { include_blank: false }, class: 'form-control') %>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-job_category">
+            <%= f.label :customer_service_score %>
+            <div class="field select-style">
+              <%= f.select(:customer_service_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], { include_blank: false }, class: 'form-control') %>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-job_category">
+            <%= f.label :leadership_score %>
+            <div class="field select-style">
+              <%= f.select(:leadership_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], { include_blank: false }, class: 'form-control') %>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-job_category">
+            <%= f.label :proactivity_score %>
+            <div class="field select-style">
+              <%= f.select(:proactivity_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], { include_blank: false }, class: 'form-control') %>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-job_category">
+            <%= f.label :teamwork_score %>
+            <div class="field select-style">
+              <%= f.select(:teamwork_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], { include_blank: false }, class: 'form-control') %>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-job_category">
+            <%= f.label :flexibility_score %>
+            <div class="field select-style">
+              <%= f.select(:flexibility_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], { include_blank: false }, class: 'form-control') %>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <%= f.label :contribution_to_sales %>
+            <div class="field">
+              <%= f.text_field :contribution_to_sales, class: 'form-control', placeholder: 'Valor R$' %>
+            </div>
+          </fieldset>
+
+<!-- TODO: CHECKBOX aqui para baixo -->
+          <fieldset>
+            <%= f.label :unjustified_absences %>
+            <div class="field">
+              <%= f.number_field :unjustified_absences, class: 'form-control', placeholder: 'Role' %>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <%= f.label :warnings %>
+            <div class="field">
+              <%= f.number_field :warnings, class: 'form-control', placeholder: 'Role' %>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <%= f.label :late_for_work %>
+            <div class="field">
+              <%= f.number_field :late_for_work, class: 'form-control', placeholder: 'Role' %>
+            </div>
+          </fieldset>
+
+          <div class="spacer"></div>
+
+          <p>
+            <%= f.submit 'Adicionar', class: 'btn btn-primary' %>
+          </p>
+        <% end %>
+
+      </div>
+    </div>
+
+  </div>
+</section>
