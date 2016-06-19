@@ -31,11 +31,11 @@
 // --------------------------------------------------
 */
 a {
-  color: #ff3200;
+  color: #e8b001;
   text-decoration: none;
 }
 a:hover {
-  color: #e62d00;
+  color: #e8b001;
   text-decoration: underline;
 }
 /*
@@ -158,7 +158,7 @@ p {
   color: #fff;
 }
 .section-dark .title-accent > h3 > span {
-  color: #ff3200;
+  color: #e8b001;
 }
 .title-centered {
   text-align: center;
@@ -289,17 +289,17 @@ p {
   box-shadow: none;
 }
 .btn-primary {
-  background: #ff3200;
+  background: #e8b001;
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-primary:hover,
 .btn-primary:focus {
   border-color: transparent;
-  background-color: #e62d00;
+  background-color: #e8b001;
 }
 .btn-primary:active,
 .btn-primary.active {
-  background-color: #e62d00;
+  background-color: #e8b001;
   border-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -415,7 +415,7 @@ div.list ul li:before {
   content: "\f105";
   font-family: 'FontAwesome';
   font-size: 14px;
-  color: #ff3200;
+  color: #e8b001;
   margin-right: 10px;
   font-style: normal;
   font-weight: normal;
@@ -431,7 +431,7 @@ div.list.list__lg ul li {
 div.list.list__lg ul li:before {
   width: 28px;
   height: 28px;
-  border: 1px solid #ff3200;
+  border: 1px solid #e8b001;
   border-radius: 2px;
   text-align: center;
   line-height: 26px;
@@ -609,7 +609,7 @@ a.thumbnail.active {
   left: 50%;
   top: 0;
   border-radius: 50%;
-  background: #ff3200;
+  background: #e8b001;
   width: 240px;
   height: 240px;
   margin: 0 0 0 -120px;
@@ -714,7 +714,7 @@ a.thumbnail.active {
   margin: 0 2px;
 }
 .social-links > li > a:hover {
-  background: #ff3200;
+  background: #e8b001;
   color: #fff;
   -webkit-transition: none;
   transition: none;
@@ -729,14 +729,14 @@ a.thumbnail.active {
   color: #fff;
 }
 .social-links__primary > li > a {
-  background: #ff3200;
-  border: 1px solid #ff3200;
+  background: #e8b001;
+  border: 1px solid #e8b001;
   color: #fff;
 }
 .social-links__primary > li > a:hover {
   background: #fff;
   border-color: #fff;
-  color: #ff3200;
+  color: #e8b001;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -868,12 +868,12 @@ label.error {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #ff3200;
+  background: #e8b001;
   content: "";
 }
 .radio__custom.radio__style2 label:before {
-  background: #ff3200;
-  border-color: #e62d00;
+  background: #e8b001;
+  border-color: #e8b001;
 }
 .radio__custom.radio__style2 input[type="radio"]:checked + span:before {
   background: #fff;
@@ -882,10 +882,10 @@ label.error {
   background: #3b363a;
 }
 .radio__custom.radio__style4 label:before {
-  border-color: #ff3200;
+  border-color: #e8b001;
 }
 .radio__custom.radio__style4 input[type="radio"]:checked + span:before {
-  background: #ff3200;
+  background: #e8b001;
 }
 /* Checkbox */
 .checkbox__custom {
@@ -921,15 +921,15 @@ label.error {
   content: "\f00c";
   font-family: 'FontAwesome';
   font-size: 14px;
-  color: #ff3200;
+  color: #e8b001;
   font-style: normal;
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 .checkbox__custom.checkbox__style2 label:before {
-  background: #ff3200;
-  border-color: #e62d00;
+  background: #e8b001;
+  border-color: #e8b001;
 }
 .checkbox__custom.checkbox__style2 input[type="checkbox"]:checked + span:before {
   color: #fff;
@@ -938,10 +938,10 @@ label.error {
   color: #3b363a;
 }
 .checkbox__custom.checkbox__style4 label:before {
-  border-color: #ff3200;
+  border-color: #e8b001;
 }
 .checkbox__custom.checkbox__style4 input[type="checkbox"]:checked + span:before {
-  color: #ff3200;
+  color: #e8b001;
 }
 /*
 // #Tabs
@@ -1002,13 +1002,13 @@ label.error {
   margin-right: 6px;
 }
 .tabs .nav-tabs > li.active > a {
-  color: #ff3200;
+  color: #e8b001;
   border-left-color: #dfdfdf;
   border-right-color: #dfdfdf;
   background: #fff;
 }
 .tabs .nav-tabs > li.active > a:after {
-  background: #ff3200;
+  background: #e8b001;
 }
 .tabs .nav-tabs > li.active > a:before {
   background: #fff;
@@ -1044,7 +1044,7 @@ label.error {
 .table > thead > tr > th {
   padding: 14px;
   color: #3b363a;
-  background: #ff3200;
+  background: #e8b001;
   border-bottom: none;
   color: #fff;
   font-size: 16px;
@@ -1122,7 +1122,7 @@ label.error {
   padding: 14px 40px 14px 20px;
   color: #fff;
   font-weight: 300;
-  background: #ff3200;
+  background: #e8b001;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   position: relative;
@@ -1173,7 +1173,7 @@ label.error {
   border-radius: 2px;
   text-align: center;
   border: 1px solid #dfdfdf;
-  background: #ff3200;
+  background: #e8b001;
 }
 .panel-group__alt .panel-title > a.collapsed:before {
   background: #fff;
@@ -1359,7 +1359,7 @@ label.error {
   background: #fff;
 }
 .call-to-action.cta__overlay.cta-overlay-color__primary:before {
-  background: #ff3200;
+  background: #e8b001;
 }
 .call-to-action.cta-bg1 {
   background-image: url(../images/samples/bg1.jpg);
@@ -1384,7 +1384,7 @@ label.error {
   font-size: 28px;
   text-align: center;
   background: #fff;
-  color: #ff3200;
+  color: #e8b001;
   position: relative;
   border-radius: 50%;
   -webkit-box-shadow: inset 0 0 0 5px rgba(255, 50, 0, 0.3);
@@ -1425,8 +1425,8 @@ label.error {
   transition: 0.3s;
 }
 .icon-box .icon:hover {
-  -webkit-box-shadow: inset 0 0 0 2px #ff3200;
-  box-shadow: inset 0 0 0 2px #ff3200;
+  -webkit-box-shadow: inset 0 0 0 2px #e8b001;
+  box-shadow: inset 0 0 0 2px #e8b001;
 }
 .icon-box .icon:hover:before {
   -webkit-box-shadow: 0 0 0 0 rgba(255, 50, 0, 0);
@@ -1508,7 +1508,7 @@ label.error {
   }
 }
 .service-box .service-body .service-icon {
-  color: #ff3200;
+  color: #e8b001;
   margin-bottom: 1.2em;
 }
 @media (min-width: 992px) {
@@ -1552,7 +1552,7 @@ blockquote:before {
   left: 24px;
   top: 14px;
   font-size: 34px;
-  color: #ff3200;
+  color: #e8b001;
   font-style: normal;
   font-weight: normal;
   line-height: 1;
@@ -1783,7 +1783,7 @@ cite > span {
   margin-right: 20px;
   width: 60px;
   height: 60px;
-  color: #ff3200;
+  color: #e8b001;
   text-align: center;
   font-size: 42px;
   line-height: 42px;
@@ -1791,15 +1791,15 @@ cite > span {
   font-weight: bold;
   font-family: 'Bitter', serif;
   font-weight: 400;
-  border: 1px solid #ff3200;
+  border: 1px solid #e8b001;
 }
 .dropcap.dropcap__rounded {
   width: 58px;
   height: 58px;
-  border: 3px solid #ff3200;
+  border: 3px solid #e8b001;
   border-radius: 50%;
   background-color: #fff;
-  color: #ff3200;
+  color: #e8b001;
   font-size: 30px;
   line-height: 50px;
 }
@@ -1929,10 +1929,10 @@ cite > span {
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
 }
 .pricing-table .plan.popular .pricing-head h3 {
-  background: #ff3200;
+  background: #e8b001;
   font-size: 24px;
   line-height: 90px;
-  border-color: #ff3200;
+  border-color: #e8b001;
 }
 @media (min-width: 992px) {
   .pricing-table .plan.popular .pricing-head h3 {
@@ -2007,16 +2007,16 @@ cite > span {
   box-shadow: none;
 }
 .pricing-table__style2 .plan.popular .pricing-head .circled {
-  background: #ff3200;
+  background: #e8b001;
 }
 .pricing-table__style2 .plan.popular .pricing-head .circled:after {
-  background: #ff3200;
+  background: #e8b001;
 }
 .pricing-table__style2 .plan.popular .pricing-head h3 {
   background: none !important;
   line-height: 1.4em;
   border: none;
-  color: #ff3200;
+  color: #e8b001;
 }
 @media (min-width: 992px) {
   .pricing-table__style2 .plan.popular .pricing-head h3 {
@@ -2044,7 +2044,7 @@ cite > span {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background: #ff3200;
+  background: #e8b001;
   color: #fff;
   text-align: center;
   display: table;
@@ -2078,7 +2078,7 @@ cite > span {
 .pricing-table__style3 .plan.popular {
   -webkit-box-shadow: none;
   box-shadow: none;
-  background: #ff3200;
+  background: #e8b001;
 }
 .pricing-table__style3 .plan.popular .pricing-head .circled {
   background: #3b363a;
@@ -2129,7 +2129,7 @@ cite > span {
   margin: 0;
 }
 .pricing-table__style4 .plan .pricing-head .pricing-head-inner {
-  background: #ff3200;
+  background: #e8b001;
   padding: 15px 10px;
 }
 .pricing-table__style4 .plan .pricing-head .price {
@@ -2150,10 +2150,10 @@ cite > span {
 .pricing-table__style4 .plan.popular {
   -webkit-box-shadow: none;
   box-shadow: none;
-  background: #ff3200;
+  background: #e8b001;
 }
 .pricing-table__style4 .plan.popular .pricing-head h3 {
-  background: #ff3200;
+  background: #e8b001;
   line-height: 64px;
   border: none;
   color: #fff;
@@ -2208,7 +2208,7 @@ cite > span {
   position: relative;
   text-align: right;
   padding: 0 20px;
-  background: #ff3200;
+  background: #e8b001;
   border-radius: 3px;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -2529,8 +2529,8 @@ div.box.box__color-darken {
 }
 .counter-holder.counter-dark .fa:after {
   background-repeat: repeat-x;
-  background-image: -webkit-linear-gradient(135deg, #ff3200, #ff9980);
-  background-image: linear-gradient(135deg, #ff3200, #ff9980);
+  background-image: -webkit-linear-gradient(135deg, #e8b001, #ff9980);
+  background-image: linear-gradient(135deg, #e8b001, #ff9980);
   -webkit-transform: translate3d(-10px, -10px, 0);
   transform: translate3d(-10px, -10px, 0);
 }
@@ -2548,7 +2548,7 @@ div.box.box__color-darken {
 }
 .counter-holder.counter-primary .counter,
 .counter-holder.counter-primary .fa {
-  color: #ff3200;
+  color: #e8b001;
 }
 .circliful {
   position: relative;
@@ -2611,7 +2611,7 @@ div.box.box__color-darken {
     bottom: 40px;
     height: 34px;
     z-index: 2;
-    background: #ff3200;
+    background: #e8b001;
   }
   .promobox:after {
     content: "";
@@ -2676,7 +2676,7 @@ div.box.box__color-darken {
   position: absolute;
   left: 15px;
   bottom: 40px;
-  background: #ff3200;
+  background: #e8b001;
   z-index: 3;
   text-transform: uppercase;
 }
