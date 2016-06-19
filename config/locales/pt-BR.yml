@@ -26,8 +26,8 @@ pt-BR:
       feedback:
         service_type: Tipo de serviço
         role: Cargo ou Função
-        start_at: CPF
-        end_at: CPF
+        start_at: Data inicial do contrato
+        end_at: Data final do contrato
         commitment_score: Comprometimento
         excellence_score: Excelência nas atividades
         productivity_score: Produtividade
