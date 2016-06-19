@@ -14,6 +14,7 @@ class EmployeesController < ApplicationController
 
   def search_result
     @employees = Employee.where(employee_params)
+    @cpf = employee_params[:cpf]
   end
 
   # GET /employees/1
@@ -24,6 +25,7 @@ class EmployeesController < ApplicationController
   # GET /employees/new
   def new
     @employee = Employee.new
+    @employee.cpf = params[:cpf]
   end
 
   # GET /employees/1/edit
