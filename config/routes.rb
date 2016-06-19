@@ -12,8 +12,8 @@ Rails.application.routes.draw do
 
   resources :companies
 
-  # root 'page#home'
-  root :to => redirect('/companies/sign_in')
+  root 'page#home'
+  # root :to => redirect('/companies/sign_in')
 
   get 'page/home'
   get 'page/contact'
