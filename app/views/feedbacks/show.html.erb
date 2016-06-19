@@ -1,94 +1,90 @@
-<p id="notice"><%= notice %></p>
+<section class="page-content">
+  <div class="container">
 
-<p>
-  <strong>Company:</strong>
-  <%= @feedback.company %>
-</p>
+    <div class="row">
+      <div class="col-md-2">
+        <figure class="alignnone">
+          <%= image_tag "samples/#{@feedback.employee.photo}", alt: @feedback.employee.name %>
+        </figure>
+      </div>
+      <div class="col-md-10">
+        <div class="spacer visible-sm visible-xs"></div>
+        <div class="team-single-head">
+          <h2><%= @feedback.employee.name %></h2>
+        </div>
 
-<p>
-  <strong>Employee:</strong>
-  <%= @feedback.employee %>
-</p>
+        <p>Email: <%= @feedback.employee.email %></p>
+        <p>CPF: <%= @feedback.employee.cpf %></p>
+        <p>Tel: <%= @feedback.employee.phone %></p>
+      </div>
+    </div>
 
-<p>
-  <strong>Service type:</strong>
-  <%= @feedback.service_type %>
-</p>
+    <hr class="lg">
 
-<p>
-  <strong>Role:</strong>
-  <%= @feedback.role %>
-</p>
+    <div class="row">
 
-<p>
-  <strong>Start at:</strong>
-  <%= @feedback.start_at %>
-</p>
+      <div class="col-md-12">
+        <h3>Pontuação</h3>
 
-<p>
-  <strong>End at:</strong>
-  <%= @feedback.end_at %>
-</p>
+        <br/>
 
-<p>
-  <strong>Commitment score:</strong>
-  <%= @feedback.commitment_score %>
-</p>
+        <h6>Comprometimento</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @feedback.commitment_score_percentage %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @feedback.commitment_score_percentage %>%;">
+            <%= @feedback.commitment_score_percentage %>%
+          </div>
+        </div>
 
-<p>
-  <strong>Excellence score:</strong>
-  <%= @feedback.excellence_score %>
-</p>
+        <h6>Excelência nas atividades</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @feedback.excellence_score_percentage %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @feedback.excellence_score_percentage %>%;">
+            <%= @feedback.excellence_score_percentage %>%
+          </div>
+        </div>
 
-<p>
-  <strong>Productivity score:</strong>
-  <%= @feedback.productivity_score %>
-</p>
+        <h6>Produtividade</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @feedback.productivity_score_percentage %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @feedback.productivity_score_percentage %>%;">
+            <%= @feedback.productivity_score_percentage %>%
+          </div>
+        </div>
 
-<p>
-  <strong>Customer service score:</strong>
-  <%= @feedback.customer_service_score %>
-</p>
+        <h6>Qualidade no atendimento</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @feedback.customer_service_score_percentage %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @feedback.customer_service_score_percentage %>%;">
+            <%= @feedback.customer_service_score_percentage %>%
+          </div>
+        </div>
 
-<p>
-  <strong>Leadership score:</strong>
-  <%= @feedback.leadership_score %>
-</p>
+        <h6>Liderança</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @feedback.leadership_score_percentage %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @feedback.leadership_score_percentage %>%;">
+            <%= @feedback.leadership_score_percentage %>%
+          </div>
+        </div>
 
-<p>
-  <strong>Proactivity score:</strong>
-  <%= @feedback.proactivity_score %>
-</p>
+        <h6>Pró-atividade</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @feedback.proactivity_score_percentage %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @feedback.proactivity_score_percentage %>%;">
+            <%= @feedback.proactivity_score_percentage %>%
+          </div>
+        </div>
 
-<p>
-  <strong>Teamwork score:</strong>
-  <%= @feedback.teamwork_score %>
-</p>
+        <h6>Relacionamento</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @feedback.teamwork_score_percentage %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @feedback.teamwork_score_percentage %>%;">
+            <%= @feedback.teamwork_score_percentage %>%
+          </div>
+        </div>
 
-<p>
-  <strong>Flexibility score:</strong>
-  <%= @feedback.flexibility_score %>
-</p>
+        <h6>Flexibilidade</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @feedback.flexibility_score_percentage %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @feedback.flexibility_score_percentage %>%;">
+            <%= @feedback.flexibility_score_percentage %>%
+          </div>
+        </div>
+      </div>
+    </div>
 
-<p>
-  <strong>Contribution to sales:</strong>
-  <%= @feedback.contribution_to_sales %>
-</p>
-
-<p>
-  <strong>Unjustified absences:</strong>
-  <%= @feedback.unjustified_absences %>
-</p>
-
-<p>
-  <strong>Warnings:</strong>
-  <%= @feedback.warnings %>
-</p>
-
-<p>
-  <strong>Late for work:</strong>
-  <%= @feedback.late_for_work %>
-</p>
-
-<%= link_to 'Edit', edit_employee_feedback_path(employee_id: @feedback.employee_id, id: @feedback.id) %> |
-<%= link_to 'Back', feedbacks_path %>
+  </div>
+</section>

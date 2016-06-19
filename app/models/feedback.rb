@@ -18,4 +18,36 @@ class Feedback < ActiveRecord::Base
   validates :unjustified_absences, presence: true
   validates :warnings, presence: true
   validates :late_for_work, presence: true
+
+  def commitment_score_percentage
+    commitment_score * 20
+  end
+
+  def excellence_score_percentage
+    excellence_score * 20
+  end
+
+  def productivity_score_percentage
+    productivity_score * 20
+  end
+
+  def customer_service_score_percentage
+    customer_service_score * 20
+  end
+
+  def leadership_score_percentage
+    leadership_score * 20
+  end
+
+  def proactivity_score_percentage
+    proactivity_score * 20
+  end
+
+  def teamwork_score_percentage
+    teamwork_score * 20
+  end
+
+  def flexibility_score_percentage
+    flexibility_score * 20
+  end
 end
