@@ -20,6 +20,40 @@ class EmployeesController < ApplicationController
   # GET /employees/1
   # GET /employees/1.json
   def show
+    @can_add_feedback = Feedback.where(employee_id: params[:id]).count == 0
+
+    # TODO: Refactor
+    @avg_commitment_score = (Feedback.where(employee_id: params[:id])
+                                    .group(:employee_id)
+                                    .average(:commitment_score)[1] ||= 0) * 20
+
+    @avg_excellence_score = (Feedback.where(employee_id: params[:id])
+                                    .group(:employee_id)
+                                    .average(:excellence_score)[1] ||= 0) * 20
+
+    @avg_productivity_score = (Feedback.where(employee_id: params[:id])
+                                    .group(:employee_id)
+                                    .average(:productivity_score)[1] ||= 0) * 20
+
+    @avg_customer_service_score = (Feedback.where(employee_id: params[:id])
+                                          .group(:employee_id)
+                                          .average(:customer_service_score)[1] ||= 0) * 20
+
+    @avg_leadership_score = (Feedback.where(employee_id: params[:id])
+                                    .group(:employee_id)
+                                    .average(:leadership_score)[1] ||= 0) * 20
+
+    @avg_proactivity_score = (Feedback.where(employee_id: params[:id])
+                                    .group(:employee_id)
+                                    .average(:proactivity_score)[1] ||= 0) * 20
+
+    @avg_teamwork_score = (Feedback.where(employee_id: params[:id])
+                                  .group(:employee_id)
+                                  .average(:teamwork_score)[1] ||= 0) * 20
+
+    @avg_flexibility_score = (Feedback.where(employee_id: params[:id])
+                                    .group(:employee_id)
+                                    .average(:flexibility_score)[1] ||= 0) * 20
   end
 
   # GET /employees/new
