@@ -8,7 +8,6 @@
     <div class="spacer-lg"></div>
 
     <div class="row">
-      <!-- <div class="col-md-6 col-md-offset-3"> -->
       <div class="col-md-8 col-md-offset-2">
 
         <% if @feedback.errors.any? %>
@@ -30,116 +29,151 @@
 
           <fieldset>
             <%= f.label :service_type do %>
-              Tipo <span class="required">*</span>
+              <%= t('activerecord.attributes.feedback.service_type') %> <span class="required">*</span>
+            <% end %>
+            <div class="field select-style">
+              <%= f.select(:service_type,
+                [
+                  ['Freelancer', 'Freelancer'],
+                  ['Temporário', 'Temporário'],
+                  ['Permanente', 'Permanente']
+                ],
+                :prompt => "Selecione...", class: 'form-control') %>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <%= f.label :role do %>
+              <%= t('activerecord.attributes.feedback.role') %> <span class="required">*</span>
             <% end %>
             <div class="field">
-              <%= f.text_field :service_type, class: 'form-control', placeholder: 'Tipo' %>
+              <%= f.text_field :role, class: 'form-control', placeholder: true %>
             </div>
           </fieldset>
 
           <fieldset>
-            <%= f.label :role %>
-            <div class="field">
-              <%= f.text_field :role, class: 'form-control', placeholder: 'Role' %>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <%= f.label :start_at %>
+            <%= f.label :start_at do %>
+              <%= t('activerecord.attributes.feedback.start_at') %> <span class="required">*</span>
+            <% end %>
             <div class="field">
               <%= f.date_select :start_at, class: 'form-control' %>
             </div>
           </fieldset>
 
           <fieldset>
-            <%= f.label :end_at %>
+            <%= f.label :end_at do %>
+              <%= t('activerecord.attributes.feedback.end_at') %> <span class="required">*</span>
+            <% end %>
             <div class="field">
               <%= f.date_select :end_at, class: 'form-control' %>
             </div>
           </fieldset>
 
           <fieldset class="fieldset-job_category">
-            <%= f.label :commitment_score %>
+            <%= f.label :commitment_score do %>
+              <%= t('activerecord.attributes.feedback.commitment_score') %> <span class="required">*</span>
+            <% end %>
             <div class="field select-style">
-              <%= f.select(:commitment_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], { include_blank: false }, class: 'form-control') %>
+              <%= f.select(:commitment_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], :prompt => "Selecione...", class: 'form-control') %>
             </div>
           </fieldset>
 
           <fieldset class="fieldset-job_category">
-            <%= f.label :excellence_score %>
+            <%= f.label :excellence_score do %>
+              <%= t('activerecord.attributes.feedback.excellence_score') %> <span class="required">*</span>
+            <% end %>
             <div class="field select-style">
-              <%= f.select(:excellence_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], { include_blank: false }, class: 'form-control') %>
+              <%= f.select(:excellence_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], :prompt => "Selecione...", class: 'form-control') %>
             </div>
           </fieldset>
 
           <fieldset class="fieldset-job_category">
-            <%= f.label :productivity_score %>
+            <%= f.label :productivity_score do %>
+              <%= t('activerecord.attributes.feedback.productivity_score') %> <span class="required">*</span>
+            <% end %>
             <div class="field select-style">
-              <%= f.select(:productivity_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], { include_blank: false }, class: 'form-control') %>
+              <%= f.select(:productivity_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], :prompt => "Selecione...", class: 'form-control') %>
             </div>
           </fieldset>
 
           <fieldset class="fieldset-job_category">
-            <%= f.label :customer_service_score %>
+            <%= f.label :customer_service_score do %>
+              <%= t('activerecord.attributes.feedback.customer_service_score') %> <span class="required">*</span>
+            <% end %>
             <div class="field select-style">
-              <%= f.select(:customer_service_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], { include_blank: false }, class: 'form-control') %>
+              <%= f.select(:customer_service_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], :prompt => "Selecione...", class: 'form-control') %>
             </div>
           </fieldset>
 
           <fieldset class="fieldset-job_category">
-            <%= f.label :leadership_score %>
+            <%= f.label :leadership_score do %>
+              <%= t('activerecord.attributes.feedback.leadership_score') %> <span class="required">*</span>
+            <% end %>
             <div class="field select-style">
-              <%= f.select(:leadership_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], { include_blank: false }, class: 'form-control') %>
+              <%= f.select(:leadership_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], :prompt => "Selecione...", class: 'form-control') %>
             </div>
           </fieldset>
 
           <fieldset class="fieldset-job_category">
-            <%= f.label :proactivity_score %>
+            <%= f.label :proactivity_score do %>
+              <%= t('activerecord.attributes.feedback.proactivity_score') %> <span class="required">*</span>
+            <% end %>
             <div class="field select-style">
-              <%= f.select(:proactivity_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], { include_blank: false }, class: 'form-control') %>
+              <%= f.select(:proactivity_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], :prompt => "Selecione...", class: 'form-control') %>
             </div>
           </fieldset>
 
           <fieldset class="fieldset-job_category">
-            <%= f.label :teamwork_score %>
+            <%= f.label :teamwork_score do %>
+              <%= t('activerecord.attributes.feedback.teamwork_score') %> <span class="required">*</span>
+            <% end %>
             <div class="field select-style">
-              <%= f.select(:teamwork_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], { include_blank: false }, class: 'form-control') %>
+              <%= f.select(:teamwork_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], :prompt => "Selecione...", class: 'form-control') %>
             </div>
           </fieldset>
 
           <fieldset class="fieldset-job_category">
-            <%= f.label :flexibility_score %>
+            <%= f.label :flexibility_score do %>
+              <%= t('activerecord.attributes.feedback.flexibility_score') %> <span class="required">*</span>
+            <% end %>
             <div class="field select-style">
-              <%= f.select(:flexibility_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], { include_blank: false }, class: 'form-control') %>
+              <%= f.select(:flexibility_score, [ ['Muito Ruim', 1], ['Ruim', 2], ['Regular', 3], ['Bom', 4], ['Muito Bom', 5] ], :prompt => "Selecione...", class: 'form-control') %>
             </div>
           </fieldset>
 
           <fieldset>
-            <%= f.label :contribution_to_sales %>
+            <%= f.label :contribution_to_sales do %>
+              <%= t('activerecord.attributes.feedback.contribution_to_sales') %> <span class="required">*</span>
+            <% end %>
             <div class="field">
-              <%= f.text_field :contribution_to_sales, class: 'form-control', placeholder: 'Valor R$' %>
-            </div>
-          </fieldset>
-
-<!-- TODO: CHECKBOX aqui para baixo -->
-          <fieldset>
-            <%= f.label :unjustified_absences %>
-            <div class="field">
-              <%= f.number_field :unjustified_absences, class: 'form-control', placeholder: 'Role' %>
+              <%= f.number_field :contribution_to_sales, class: 'form-control', placeholder: 'Valor R$' %>
             </div>
           </fieldset>
 
           <fieldset>
-            <%= f.label :warnings %>
+            <%= f.label :unjustified_absences do %>
+              <%= t('activerecord.attributes.feedback.unjustified_absences') %> <span class="required">*</span>
+            <% end %>
             <div class="field">
-              <%= f.number_field :warnings, class: 'form-control', placeholder: 'Role' %>
+              <%= f.number_field :unjustified_absences, class: 'form-control', placeholder: '' %>
             </div>
           </fieldset>
 
           <fieldset>
-            <%= f.label :late_for_work %>
+            <%= f.label :warnings do %>
+              <%= t('activerecord.attributes.feedback.warnings') %> <span class="required">*</span>
+            <% end %>
             <div class="field">
-              <%= f.number_field :late_for_work, class: 'form-control', placeholder: 'Role' %>
+              <%= f.number_field :warnings, class: 'form-control', placeholder: '' %>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <%= f.label :late_for_work do %>
+              <%= t('activerecord.attributes.feedback.late_for_work') %> <span class="required">*</span>
+            <% end %>
+            <div class="field">
+              <%= f.number_field :late_for_work, class: 'form-control', placeholder: '' %>
             </div>
           </fieldset>
 
