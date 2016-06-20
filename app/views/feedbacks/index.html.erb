@@ -29,7 +29,11 @@
             <li class="job_listing">
               <%= link_to employee_feedback_path(employee_id: feedback.employee_id, id: feedback.id) do %>
                 <div class="job_img">
-                  <%= image_tag "samples/#{feedback.employee.photo}", alt: feedback.employee.name, class: 'company_logo' %>
+                  <% if feedback.employee.photo %>
+                    <%= image_tag "samples/#{feedback.employee.photo}", alt: feedback.employee.name, class: 'company_logo' %>
+                  <% else %>
+                    <%= image_tag "samples/person-shadow.jpg", alt: feedback.employee.name, class: 'company_logo' %>
+                  <% end %>
                 </div>
                 <div class="position" style="width: 40%;">
                   <h3><%= feedback.employee.name %></h3>

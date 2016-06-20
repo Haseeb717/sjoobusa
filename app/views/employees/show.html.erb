@@ -24,7 +24,11 @@
     <div class="row">
       <div class="col-md-2">
         <figure class="alignnone">
-          <%= image_tag "samples/#{@employee.photo}", alt: @employee.name %>
+          <% if @employee.photo %>
+            <%= image_tag "samples/#{@employee.photo}", alt: @employee.name %>
+          <% else %>
+            <%= image_tag "samples/person-shadow.jpg", alt: @employee.name %>
+          <% end %>
         </figure>
       </div>
       <div class="col-md-10">
