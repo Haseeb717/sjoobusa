@@ -1,152 +1,165 @@
 <section class="page-content">
   <div class="container">
 
-		<div class="spacer-sm"></div>
+    <div class="col-md-6 col-md-offset-3">
+      <% unless notice.blank? %>
+        <div class="alert alert-warning alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+          <ul>
+            <li>
+              <strong><%= notice %></strong>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="spacer-sm"></div>
 
     <div class="row">
-			<div class="col-md-5">
-				<div class="entry-thumb-wrapper">
-					<figure class="alignnone video-holder">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/PCyD9TndJx8?autoplay=0&showinfo=0&controls=0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-					</figure>
-				</div>
-			</div>
+      <div class="col-md-5">
+        <div class="entry-thumb-wrapper">
+          <figure class="alignnone video-holder">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/PCyD9TndJx8?autoplay=0&showinfo=0&controls=0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+          </figure>
+        </div>
+      </div>
 
-			<div class="col-md-6 col-md-offset-1">
-				<h1>SJOOBS</h1>
-				<h4>O primeiro sistema de proteção ao empregador do mundo.</h4>
-				<p>Se você fosse um banco, você daria crédito à pessoas sem checar ou mantê-las sob os serviços de proteção ao crédito? Certamente não.</p>
+      <div class="col-md-6 col-md-offset-1">
+        <h1>SJOOBS</h1>
+        <h4>O primeiro sistema de proteção ao empregador do mundo.</h4>
+        <p>Se você fosse um banco, você daria crédito à pessoas sem checar ou mantê-las sob os serviços de proteção ao crédito? Certamente não.</p>
 
-				<p>Mas até hoje como empregador você colocou sua empresa nas mãos de pessoas sem saber seus REAIS históricos, REAIS  recomendações e REAIS motivos de desligamento de outras empresas...</p>
-			</div>
-		</div>
+        <p>Mas até hoje como empregador você colocou sua empresa nas mãos de pessoas sem saber seus REAIS históricos, REAIS  recomendações e REAIS motivos de desligamento de outras empresas...</p>
+      </div>
+    </div>
 
-		<div class="spacer"></div>
+    <div class="spacer"></div>
 
-		<div class="row">
-			<div class="col-md-12">
-				<div class="col-md-6">
-					<h6>Bem vindos ao sjoobs, o primeiro sistema de proteção ao empregador do mundo.</h6>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-6">
+          <h6>Bem vindos ao sjoobs, o primeiro sistema de proteção ao empregador do mundo.</h6>
 
-					<div class="list">
-						<ul>
-							<li>Antes de contratar, consulte o CPF do candidato.</li>
-							<li>Veja seus históricos por empresa.</li>
-							<li>Acesse seus rendimentos, recomendação com base em pontuações obtidas e motivo do desligamento.</li>
-						</ul>
-					</div>
-				</div>
+          <div class="list">
+            <ul>
+              <li>Antes de contratar, consulte o CPF do candidato.</li>
+              <li>Veja seus históricos por empresa.</li>
+              <li>Acesse seus rendimentos, recomendação com base em pontuações obtidas e motivo do desligamento.</li>
+            </ul>
+          </div>
+        </div>
 
-				<div class="col-md-6">
-					<h6>Mantenha sua equipe sob controle do SJOOBS, desde a contratacao, até um possivel desligamento. Desfrute de:</h6>
+        <div class="col-md-6">
+          <h6>Mantenha sua equipe sob controle do SJOOBS, desde a contratacao, até um possivel desligamento. Desfrute de:</h6>
 
-					<div class="list">
-						<ul>
-							<li>Melhores pessoas.</li>
-							<li>Melhores processos.</li>
-							<li>Melhores produtos.</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+          <div class="list">
+            <ul>
+              <li>Melhores pessoas.</li>
+              <li>Melhores processos.</li>
+              <li>Melhores produtos.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
-		<div class="spacer-xl"></div>
+    <div class="spacer-xl"></div>
 
-		<!-- Stats -->
-		<div class="section-light section-nomargin">
-			<div class="section-inner">
-				<div class="row">
-					<div class="col-md-4">
-						<div class="counter-holder counter-dark">
-							<i class="fa fa-3x fa-thumbs-o-up"></i>
-							<span class="counter-wrap">
-								<span class="counter" data-to="12" data-speed="1500" data-refresh-interval="50">12</span>
-							</span>
-							<span class="counter-info">
-								<span class="counter-info-inner">Avaliações</span>
-							</span>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="counter-holder counter-dark">
-							<i class="fa fa-3x fa-users"></i>
-							<span class="counter-wrap">
-								<span class="counter" data-to="64" data-speed="1500" data-refresh-interval="50">64</span>
-							</span>
-							<span class="counter-info">
-								<span class="counter-info-inner">Profissionais</span>
-							</span>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="counter-holder counter-dark">
-							<i class="fa fa-3x fa-building"></i>
-							<span class="counter-wrap">
-								<span class="counter" data-to="48" data-speed="1500" data-refresh-interval="50">48</span>
-							</span>
-							<span class="counter-info">
-								<span class="counter-info-inner">Empresas</span>
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Stats / End -->
+    <!-- Stats -->
+    <div class="section-light section-nomargin">
+      <div class="section-inner">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="counter-holder counter-dark">
+              <i class="fa fa-3x fa-thumbs-o-up"></i>
+              <span class="counter-wrap">
+                <span class="counter" data-to="12" data-speed="1500" data-refresh-interval="50">12</span>
+              </span>
+              <span class="counter-info">
+                <span class="counter-info-inner">Avaliações</span>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="counter-holder counter-dark">
+              <i class="fa fa-3x fa-users"></i>
+              <span class="counter-wrap">
+                <span class="counter" data-to="64" data-speed="1500" data-refresh-interval="50">64</span>
+              </span>
+              <span class="counter-info">
+                <span class="counter-info-inner">Profissionais</span>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="counter-holder counter-dark">
+              <i class="fa fa-3x fa-building"></i>
+              <span class="counter-wrap">
+                <span class="counter" data-to="48" data-speed="1500" data-refresh-interval="50">48</span>
+              </span>
+              <span class="counter-info">
+                <span class="counter-info-inner">Empresas</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Stats / End -->
 
-		<div class="call-to-action centered cta__fullwidth cta__overlay cta__overlay-opacity-75 cta-overlay-color__dark cta-bg2" data-stellar-background-ratio="0.5">
-			<div class="cta-inner">
-				<div class="cta-txt">
-					<h2>O primeiro sistema de proteção ao empregador do mundo</h2>
-					<p>Eleve sua equipe e sua empresa a níveis nunca antes imaginados</p>
-				</div>
-				<div class="cta-btn">
-					<!-- <a href="#" class="btn btn-primary">Get Started!</a> -->
-					<%= link_to 'Cadastre-se', new_company_registration_path, class: 'btn btn-primary' %>
-				</div>
-			</div>
-		</div>
+    <div class="call-to-action centered cta__fullwidth cta__overlay cta__overlay-opacity-75 cta-overlay-color__dark cta-bg2" data-stellar-background-ratio="0.5">
+      <div class="cta-inner">
+        <div class="cta-txt">
+          <h2>O primeiro sistema de proteção ao empregador do mundo</h2>
+          <p>Eleve sua equipe e sua empresa a níveis nunca antes imaginados</p>
+        </div>
+        <div class="cta-btn">
+          <!-- <a href="#" class="btn btn-primary">Get Started!</a> -->
+          <%= link_to 'Cadastre-se', new_company_registration_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
 
-		<div class="spacer-xl"></div>
+    <div class="spacer-xl"></div>
 
-		<!-- Testimonials -->
-		<div class="title-bordered">
-			<h2>Depoimentos <small>o que nossos clientes dizem</small></h2>
-		</div>
-		<div class="row">
-			<div class="col-md-4 col-md-offset-2">
-				<div class="testimonial">
-					<blockquote>
-						<p>Já tive muitos problemas com funcionários sem comprometimento e irresponsáveis, mas gora que eu uso o SJOOBS, os candidatos sabem que seus nomes podem ficar "sujos" ou serem bem avalidos no mercado de trabalho!</p>
-						<p>Tenho conseguido por em prática com muito mais efetividade todas as diretrizes da empresa. Também observei um aumento expressivo nas vendas e melhora no atendimento ao cliente.</p>
-					</blockquote>
-					<div class="bq-author">
-						<figure class="author-img">
-							<%= image_tag "samples/user1-sm.jpg" %>
-						</figure>
-						<h6>Bruno Folly</h6>
-						<span class="bq-author-info">Forte Farma</span>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="testimonial">
-					<blockquote>
-						<p>Realmente o SJOOBS veio trazer o que faltava a nós empregadores: a liberdade da gente de informar sem medo de processos judiciais sobre nossas reais experiências com funcionários desligados da empresa e a facilidade, rapidez e confiança em consultar o histórico de um candidato a uma vaga. </p>
-						<p>Além disso, podemos extrair por consequência o melhor dos membros de nossa equipe que, para se manterem bem pontuados no mercado após um possível desligamento, precisam contribuir positivamente e corriqueiramente para a empresa gerando em nós empregadores uma boa experiência quanto a sua pessoa.</p>
-					</blockquote>
-					<div class="bq-author">
-						<figure class="author-img">
-							<%= image_tag "samples/user3-sm.jpg" %>
-						</figure>
-						<h6>André Dewulsky</h6>
-						<span class="bq-author-info">Dewulsky aeronaves</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Testimonials / End -->
+    <!-- Testimonials -->
+    <div class="title-bordered">
+      <h2>Depoimentos <small>o que nossos clientes dizem</small></h2>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2">
+        <div class="testimonial">
+          <blockquote>
+            <p>Já tive muitos problemas com funcionários sem comprometimento e irresponsáveis, mas gora que eu uso o SJOOBS, os candidatos sabem que seus nomes podem ficar "sujos" ou serem bem avalidos no mercado de trabalho!</p>
+            <p>Tenho conseguido por em prática com muito mais efetividade todas as diretrizes da empresa. Também observei um aumento expressivo nas vendas e melhora no atendimento ao cliente.</p>
+          </blockquote>
+          <div class="bq-author">
+            <figure class="author-img">
+              <%= image_tag "samples/user1-sm.jpg" %>
+            </figure>
+            <h6>Bruno Folly</h6>
+            <span class="bq-author-info">Forte Farma</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial">
+          <blockquote>
+            <p>Realmente o SJOOBS veio trazer o que faltava a nós empregadores: a liberdade da gente de informar sem medo de processos judiciais sobre nossas reais experiências com funcionários desligados da empresa e a facilidade, rapidez e confiança em consultar o histórico de um candidato a uma vaga. </p>
+            <p>Além disso, podemos extrair por consequência o melhor dos membros de nossa equipe que, para se manterem bem pontuados no mercado após um possível desligamento, precisam contribuir positivamente e corriqueiramente para a empresa gerando em nós empregadores uma boa experiência quanto a sua pessoa.</p>
+          </blockquote>
+          <div class="bq-author">
+            <figure class="author-img">
+              <%= image_tag "samples/user3-sm.jpg" %>
+            </figure>
+            <h6>André Dewulsky</h6>
+            <span class="bq-author-info">Dewulsky aeronaves</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Testimonials / End -->
 
   </div>
 </section>
