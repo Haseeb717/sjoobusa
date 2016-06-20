@@ -14,13 +14,22 @@
         <% unless notice.blank? %>
           <div class="alert alert-warning alert-dismissable">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
-            <ul>
-              <% notice.each do |msg| %>
+
+            <% if notice.is_a?(Array) %>
+              <ul>
+                <% notice.each do |msg| %>
+                  <li>
+                    <strong><%= msg %></strong>
+                  </li>
+                <% end %>
+              </ul>
+            <% else %>
+              <ul>
                 <li>
-                  <strong><%= msg %></strong>
+                  <strong><%= notice %></strong>
                 </li>
-              <% end %>
-            </ul>
+              </ul>
+            <% end %>
           </div>
         <% end %>
 
