@@ -19,6 +19,19 @@
   <%= javascript_include_tag 'application' %>
 
   <link href="<%= image_path('favicons/favicon.ico') %>" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+  <script>
+    // TODO: Why is not working?
+    $(".flexnav").flexNav({
+        'animationSpeed':     200,            // default for drop down animation speed
+        'transitionOpacity':  true,           // default for opacity animation
+        'buttonSelector':     '.navbar-toggle', // default menu button class name
+        'hoverIntent':        true,          // Change to true for use with hoverIntent plugin
+        'hoverIntentTimeout': 300,            // hoverIntent default timeout
+        'calcItemWidths':     false,          // dynamically calcs top level nav item widths
+        'hover':              true            // would you like hover support?
+    });
+  </script>
   
 </head>
 <body>

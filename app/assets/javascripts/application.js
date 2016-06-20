@@ -15,6 +15,7 @@
 //= require jquery-migrate-min
 //= require jquery.ui.all
 //= require bootstrap-sprockets
+//= require jquery.flexnav.min
 //= require magnific-popup
 //= require owl.carousel
 //= require_tree .
