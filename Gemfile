@@ -60,6 +60,9 @@ gem 'brazilian-rails'
 
 gem 'rails-i18n', '~> 4.0.0'
 
+# Puma webserver
+gem 'puma'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
