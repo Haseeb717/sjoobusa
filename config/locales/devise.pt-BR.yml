@@ -24,7 +24,13 @@ pt-BR:
         instruction: 'Somos o primeiro sistema de proteção ao empregador do mundo e temos o imenso prazer de ter sua empresa associda aos nossos serviços. Todo nosso processo de pré e pós registro passa por uma checagem para garantir a segurança e veracidade das informações fornecidas à sua empresa em nosso sistema.'
         footer: 'A equipe do SJOOBS agradece. Qualquer dúvida entre em contato, teremos o maior prazer em atendê-lo(a).'
       reset_password_instructions:
-        subject: 'Instruções de troca de senha'
+        mail_to: suporte@sjoobs.com
+        instruction: 'Foi requerida em nosso sistema a mudança de sua senha!'
+        instruction_2: 'Caso tenha sido você, basta acessar o link abaixo e completar o processo:'
+        action: Redefinir minha senha
+        instruction_3_part1: 'Atenção! Caso não tenha requerido qualquer mudança, ignore o link acima e entre em contato com nossa central de atendimento pelo email'
+        instruction_3_part2: ' e reporte a situação para que possamos identificar qualquer atividade não requerida em sua conta.'
+        footer: A equipe do SJOOBS agradece.
       unlock_instructions:
         subject: 'Instruções de desbloqueio'
       password_change:
