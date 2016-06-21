@@ -42,124 +42,126 @@
       </div>
     </div>
 
-    <hr class="lg">
+    <% if @employee.feedbacks.count > 0 %>
+      <hr class="lg">
 
-    <div class="row">
+      <div class="row">
 
-      <div class="col-md-12">
-        <h3>Pontuação (média das avaliações)</h3>
+        <div class="col-md-12">
+          <h3>Pontuação (média das avaliações)</h3>
 
-        <br/>
+          <br/>
 
-        <h6>Comprometimento</h6>
-        <div class="progress">
-          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @avg_commitment_score %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @avg_commitment_score %>%;">
-            <%= @avg_commitment_score %>%
+          <h6>Comprometimento</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @avg_commitment_score %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @avg_commitment_score %>%;">
+              <%= @avg_commitment_score %>%
+            </div>
           </div>
-        </div>
 
-        <h6>Excelência nas atividades</h6>
-        <div class="progress">
-          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @avg_excellence_score %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @avg_excellence_score %>%;">
-            <%= @avg_excellence_score %>%
+          <h6>Excelência nas atividades</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @avg_excellence_score %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @avg_excellence_score %>%;">
+              <%= @avg_excellence_score %>%
+            </div>
           </div>
-        </div>
 
-        <h6>Produtividade</h6>
-        <div class="progress">
-          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @avg_productivity_score %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @avg_productivity_score %>%;">
-            <%= @avg_productivity_score %>%
+          <h6>Produtividade</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @avg_productivity_score %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @avg_productivity_score %>%;">
+              <%= @avg_productivity_score %>%
+            </div>
           </div>
-        </div>
 
-        <h6>Qualidade no atendimento</h6>
-        <div class="progress">
-          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @avg_customer_service_score %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @avg_customer_service_score %>%;">
-            <%= @avg_customer_service_score %>%
+          <h6>Qualidade no atendimento</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @avg_customer_service_score %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @avg_customer_service_score %>%;">
+              <%= @avg_customer_service_score %>%
+            </div>
           </div>
-        </div>
 
-        <h6>Liderança</h6>
-        <div class="progress">
-          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @avg_leadership_score %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @avg_leadership_score %>%;">
-            <%= @avg_leadership_score %>%
+          <h6>Liderança</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @avg_leadership_score %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @avg_leadership_score %>%;">
+              <%= @avg_leadership_score %>%
+            </div>
           </div>
-        </div>
 
-        <h6>Pró-atividade</h6>
-        <div class="progress">
-          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @avg_proactivity_score %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @avg_proactivity_score %>%;">
-            <%= @avg_proactivity_score %>%
+          <h6>Pró-atividade</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @avg_proactivity_score %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @avg_proactivity_score %>%;">
+              <%= @avg_proactivity_score %>%
+            </div>
           </div>
-        </div>
 
-        <h6>Relacionamento</h6>
-        <div class="progress">
-          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @avg_teamwork_score %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @avg_teamwork_score %>%;">
-            <%= @avg_teamwork_score %>%
+          <h6>Relacionamento</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @avg_teamwork_score %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @avg_teamwork_score %>%;">
+              <%= @avg_teamwork_score %>%
+            </div>
           </div>
-        </div>
 
-        <h6>Flexibilidade</h6>
-        <div class="progress">
-          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @avg_flexibility_score %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @avg_flexibility_score %>%;">
-            <%= @avg_flexibility_score %>%
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <hr class="lg">
-
-    <div class="row">
-      <div class="content col-md-12">
-
-        <!-- Additional Info Tabs -->
-        <div class="tabs">
-          <!-- Nav tabs -->
-          <ul class="nav nav-tabs">
-            <li class="active"><a href="#tab1-1" data-toggle="tab">Avaliações</a></li>
-          </ul>
-          <!-- Tab panes -->
-          <div class="tab-content">
-            <div class="tab-pane fade in active" id="tab1-1">
-              <!-- Comments -->
-              <div class="comments-wrapper">
-                <h3>Avaliações (<%= @employee.feedbacks.count %>)</h3>
-                <ol class="commentlist">
-                  <% @employee.feedbacks.each do |feedback| %>
-                    <li class="comment">
-                      <div class="comment-wrapper">
-                        <div class="comment-author vcard">
-                          <h5><%= feedback.company.trade %></h5>
-                          <div class="comment-meta">
-                            <%= distance_of_time_in_words(Time.now, feedback.created_at) %>
-                          </div>
-                          <div class="rating-stars">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <!-- <i class="fa fa-star-half-o"></i>
-                            <i class="fa fa-star-o"></i> -->
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  <% end %>
-                </ol>
-              </div>
-              <!-- Comments / End -->
-
+          <h6>Flexibilidade</h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<%= @avg_flexibility_score %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @avg_flexibility_score %>%;">
+              <%= @avg_flexibility_score %>%
             </div>
           </div>
         </div>
-        <!-- Additional Info Tabs / End -->
-
       </div>
 
-    </div>
+      <hr class="lg">
+
+      <div class="row">
+        <div class="content col-md-12">
+
+          <!-- Additional Info Tabs -->
+          <div class="tabs">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#tab1-1" data-toggle="tab">Avaliações</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div class="tab-pane fade in active" id="tab1-1">
+                <!-- Comments -->
+                <div class="comments-wrapper">
+                  <h3>Avaliações (<%= @employee.feedbacks.count %>)</h3>
+                  <ol class="commentlist">
+                    <% @employee.feedbacks.each do |feedback| %>
+                      <li class="comment">
+                        <div class="comment-wrapper">
+                          <div class="comment-author vcard">
+                            <h5><%= feedback.company.trade %></h5>
+                            <div class="comment-meta">
+                              <%= distance_of_time_in_words(Time.now, feedback.created_at) %>
+                            </div>
+                            <div class="rating-stars">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <!-- <i class="fa fa-star-half-o"></i>
+                              <i class="fa fa-star-o"></i> -->
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    <% end %>
+                  </ol>
+                </div>
+                <!-- Comments / End -->
+
+              </div>
+            </div>
+          </div>
+          <!-- Additional Info Tabs / End -->
+
+        </div>
+
+      </div>
+    <% end %>
 
   </div>
 </section>
