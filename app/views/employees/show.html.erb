@@ -48,9 +48,14 @@
       <div class="row">
 
         <div class="col-md-12">
-          <h3>Pontuação (média das avaliações)</h3>
-
-          <br/>
+          <h3>
+            Pontuação (média das avaliações)
+            <% if @employee.feedbacks.count == 1 %>
+              <small>(<%= @employee.feedbacks.count %> empresa já avaliou esse profissional)</small>
+            <% else %>
+              <small>(<%= @employee.feedbacks.count %> empresas já avaliaram esse profissional)</small>
+            <% end %>
+          </h3>
 
           <h6>Comprometimento</h6>
           <div class="progress">
@@ -103,57 +108,6 @@
         </div>
       </div>
 
-      <hr class="lg">
-
-      <div class="row">
-        <div class="content col-md-12">
-
-          <!-- Additional Info Tabs -->
-          <div class="tabs">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#tab1-1" data-toggle="tab">Avaliações</a></li>
-            </ul>
-            <!-- Tab panes -->
-            <div class="tab-content">
-              <div class="tab-pane fade in active" id="tab1-1">
-                <!-- Comments -->
-                <div class="comments-wrapper">
-                  <h3>Avaliações (<%= @employee.feedbacks.count %>)</h3>
-                  <ol class="commentlist">
-                    <% @employee.feedbacks.each do |feedback| %>
-                      <li class="comment">
-                        <div class="comment-wrapper">
-                          <div class="comment-author vcard">
-                            <h5><%= feedback.company.trade %></h5>
-                            <div class="comment-meta">
-                              <%= distance_of_time_in_words(Time.now, feedback.created_at) %>
-                            </div>
-                            <div class="rating-stars">
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <i class="fa fa-star"></i>
-                              <!-- <i class="fa fa-star-half-o"></i>
-                              <i class="fa fa-star-o"></i> -->
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    <% end %>
-                  </ol>
-                </div>
-                <!-- Comments / End -->
-
-              </div>
-            </div>
-          </div>
-          <!-- Additional Info Tabs / End -->
-
-        </div>
-
-      </div>
     <% end %>
 
   </div>
