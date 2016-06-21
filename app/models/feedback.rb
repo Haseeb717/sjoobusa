@@ -19,6 +19,7 @@ class Feedback < ActiveRecord::Base
   validates :late_for_work, presence: true
 
   validate :end_after_start
+  validate :end_after_today
 
   def commitment_score_percentage
     commitment_score * 20
@@ -54,6 +55,14 @@ class Feedback < ActiveRecord::Base
 
       if end_at < start_at
         errors.add(:end_at, "não pode ser anterior a data inicial")
+      end
+    end
+
+    def end_after_today
+      return if end_at.blank?
+
+      if end_at > Date.today
+        errors.add(:end_at, "não pode ser posterior a data de hoje")
       end
     end
 end
