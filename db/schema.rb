@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160604132232) do
+ActiveRecord::Schema.define(version: 20160621002850) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -38,9 +41,9 @@ ActiveRecord::Schema.define(version: 20160604132232) do
     t.string   "unconfirmed_email"
   end
 
-  add_index "companies", ["confirmation_token"], name: "index_companies_on_confirmation_token", unique: true
-  add_index "companies", ["email"], name: "index_companies_on_email", unique: true
-  add_index "companies", ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true
+  add_index "companies", ["confirmation_token"], name: "index_companies_on_confirmation_token", unique: true, using: :btree
+  add_index "companies", ["email"], name: "index_companies_on_email", unique: true, using: :btree
+  add_index "companies", ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true, using: :btree
 
   create_table "employees", force: :cascade do |t|
     t.string   "cpf"
@@ -62,7 +65,6 @@ ActiveRecord::Schema.define(version: 20160604132232) do
     t.integer  "commitment_score"
     t.integer  "excellence_score"
     t.integer  "productivity_score"
-    t.integer  "customer_service_score"
     t.integer  "leadership_score"
     t.integer  "proactivity_score"
     t.integer  "teamwork_score"
@@ -71,11 +73,11 @@ ActiveRecord::Schema.define(version: 20160604132232) do
     t.integer  "unjustified_absences"
     t.integer  "warnings"
     t.integer  "late_for_work"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
-  add_index "feedbacks", ["company_id"], name: "index_feedbacks_on_company_id"
-  add_index "feedbacks", ["employee_id"], name: "index_feedbacks_on_employee_id"
+  add_index "feedbacks", ["company_id"], name: "index_feedbacks_on_company_id", using: :btree
+  add_index "feedbacks", ["employee_id"], name: "index_feedbacks_on_employee_id", using: :btree
 
 end
