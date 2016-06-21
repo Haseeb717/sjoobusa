@@ -35,10 +35,6 @@ class EmployeesController < ApplicationController
                                     .group(:employee_id)
                                     .average(:productivity_score)[1] ||= 0) * 20
 
-    @avg_customer_service_score = (Feedback.where(employee_id: params[:id])
-                                          .group(:employee_id)
-                                          .average(:customer_service_score)[1] ||= 0) * 20
-
     @avg_leadership_score = (Feedback.where(employee_id: params[:id])
                                     .group(:employee_id)
                                     .average(:leadership_score)[1] ||= 0) * 20

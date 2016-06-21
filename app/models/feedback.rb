@@ -9,7 +9,6 @@ class Feedback < ActiveRecord::Base
   validates :commitment_score, presence: true
   validates :excellence_score, presence: true
   validates :productivity_score, presence: true
-  validates :customer_service_score, presence: true
   validates :leadership_score, presence: true
   validates :proactivity_score, presence: true
   validates :teamwork_score, presence: true
@@ -29,10 +28,6 @@ class Feedback < ActiveRecord::Base
 
   def productivity_score_percentage
     productivity_score * 20
-  end
-
-  def customer_service_score_percentage
-    customer_service_score * 20
   end
 
   def leadership_score_percentage
