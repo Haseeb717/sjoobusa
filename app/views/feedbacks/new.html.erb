@@ -70,6 +70,30 @@
           </fieldset>
 
           <fieldset class="fieldset-job_category">
+            <%= f.label :termination_reason do %>
+              <%= t('activerecord.attributes.feedback.termination_reason') %> <span class="required">*</span>
+            <% end %>
+            <div class="field select-style">
+              <%= f.select(:termination_reason,
+                [
+                  ['Redução de custos ou equipe', 1],
+                  ['Baixa performance nas tarefas e metas da empresa', 2],
+                  ['Não adequado à cultura da empresa', 3],
+                  ['Mau entrosamento ou relacionamento com a equipe', 4],
+                  ['Múltiplas faltas, atrasos ou advertências', 5],
+                  ['Perda de confiança ou crença na integridade ou no trabalho desta pessoa', 6],
+                  ['Má relação com superior, não respeita regras e ordens', 7],
+                  ['Suspeita de fraude contra as finanças da empresa', 8],
+                  ['Baixo ou nenhum comprometimento dos compromissos para qual foi contratado', 9],
+                  ['Uso da empresa para obter vantagens pessoais', 10],
+                  ['Funcionário pediu desligamento da empresa por motivos próprios', 11],
+                  ['Nenhuma das anteriores, apenas um término de contrato', 12]
+                ],
+                :prompt => "Selecione...", class: 'form-control') %>
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-job_category">
             <%= f.label :commitment_score do %>
               <%= t('activerecord.attributes.feedback.commitment_score') %> <span class="required">*</span>
             <% end %>

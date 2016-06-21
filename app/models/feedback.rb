@@ -17,6 +17,7 @@ class Feedback < ActiveRecord::Base
   validates :unjustified_absences, presence: true
   validates :warnings, presence: true
   validates :late_for_work, presence: true
+  validates :termination_reason, presence: true
 
   validate :end_after_start
   validate :end_after_today

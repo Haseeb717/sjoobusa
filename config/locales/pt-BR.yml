@@ -39,6 +39,7 @@ pt-BR:
         unjustified_absences: Faltas não justificadas
         warnings: Advertências
         late_for_work: Atraso de horário
+        termination_reason: Motivo do desligamento
   date:
     abbr_day_names:
     - Dom
