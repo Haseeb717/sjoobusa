@@ -1,6 +1,19 @@
 <section class="page-content">
   <div class="container">
 
+    <div class="col-md-6 col-md-offset-3">
+      <% unless notice.blank? %>
+        <div class="alert alert-warning alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+          <ul>
+            <li>
+              <strong><%= notice %></strong>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+
     <div class="col-md-12 col-md-offset-5">
       <h3>Profissional</h3>
     </div>
