@@ -6,6 +6,21 @@ pt-BR:
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
+    models:
+      feedback:
+        termination_reason:
+          code1: Redução de custos ou equipe
+          code2: Baixa performance nas tarefas e metas da empresa
+          code3: Não adequado à cultura da empresa
+          code4: Mau entrosamento ou relacionamento com a equipe
+          code5: Múltiplas faltas, atrasos ou advertências
+          code6: Perda de confiança ou crença na integridade ou no trabalho desta pessoa
+          code7: Má relação com superior, não respeita regras e ordens
+          code8: Suspeita de fraude contra as finanças da empresa
+          code9: Baixo ou nenhum comprometimento dos compromissos para qual foi contratado
+          code10: Uso da empresa para obter vantagens pessoais
+          code11: Funcionário pediu desligamento da empresa por motivos próprios
+          code12: Nenhuma das anteriores, apenas um término de contrato
     attributes:
       company:
         name: Razão Social
