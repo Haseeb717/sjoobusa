@@ -66,6 +66,9 @@
               <ul class="header-top-nav header-top-nav__tertiary">
                 <% if company_signed_in? %>
                   <li>
+                    <%= "#{current_company.trade} (#{current_company.email})" %>&nbsp;&nbsp;&nbsp;
+                  </li>
+                  <li>
                     <%= link_to destroy_company_session_path, method: :delete do %>
                       <i class="fa fa-sign-out"></i> <%= t(".sign_out", :default => "Sign out") %>
                     <% end %>
