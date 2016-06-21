@@ -18,6 +18,8 @@ class Feedback < ActiveRecord::Base
   validates :warnings, presence: true
   validates :late_for_work, presence: true
 
+  validate :end_after_start
+
   def commitment_score_percentage
     commitment_score * 20
   end
@@ -45,4 +47,13 @@ class Feedback < ActiveRecord::Base
   def flexibility_score_percentage
     flexibility_score * 20
   end
+
+  private
+    def end_after_start
+      return if end_at.blank? || start_at.blank?
+
+      if end_at < start_at
+        errors.add(:end_at, "não pode ser anterior a data inicial")
+      end
+    end
 end
