@@ -20,7 +20,7 @@ class EmployeesController < ApplicationController
   # GET /employees/1
   # GET /employees/1.json
   def show
-    @can_add_feedback = Feedback.where(employee_id: params[:id]).count == 0
+    @can_add_feedback = Feedback.where(employee_id: params[:id], company_id: current_company.id).count == 0
 
     # TODO: Refactor
     @avg_commitment_score = (Feedback.where(employee_id: params[:id])
