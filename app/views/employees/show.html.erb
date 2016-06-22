@@ -48,6 +48,10 @@
       <div class="row">
 
         <div class="col-md-12">
+          <h4>
+            <span class="label label-<%= @final_score_status %>"><%= t("activerecord.models.employee.recommendation.#{@final_score_status}") %></span>&nbsp;&nbsp;<small>(Recomendação Automática)</small>
+          </h4>
+
           <h3>
             Pontuação (média das avaliações)
             <% if @employee.feedbacks.count == 1 %>
