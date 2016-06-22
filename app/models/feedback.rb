@@ -14,9 +14,6 @@ class Feedback < ActiveRecord::Base
   validates :teamwork_score, presence: true
   validates :flexibility_score, presence: true
   validates :contribution_to_sales, presence: true
-  validates :unjustified_absences, presence: true
-  validates :warnings, presence: true
-  validates :late_for_work, presence: true
   validates :termination_reason, presence: true
 
   validate :end_after_start
