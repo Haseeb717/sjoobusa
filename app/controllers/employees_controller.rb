@@ -54,6 +54,16 @@ class EmployeesController < ApplicationController
     @avg_flexibility_score = (Feedback.where(employee_id: params[:id])
                                     .group(:employee_id)
                                     .average(:flexibility_score)[1] ||= 0) * 20
+
+    @termination_reasons_grouped = Feedback.where(employee_id: params[:id])
+                                    .group(:termination_reason)
+                                    .count(:termination_reason)
+
+    contribution_to_sales_sum = Feedback.where(employee_id: params[:id])
+                                    .group(:employee_id)
+                                    .order('sum_contribution_to_sales DESC')
+                                    .sum(:contribution_to_sales)
+    @contribution_to_sales_sum = (contribution_to_sales_sum.count > 0) ? contribution_to_sales_sum.first[1] : 0
   end
 
   # GET /employees/new

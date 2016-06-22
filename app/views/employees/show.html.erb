@@ -110,5 +110,48 @@
 
     <% end %>
 
+    <hr class="lg">
+
+    <div class="row">
+      <div class="content col-md-12">
+        <!-- Additional Info Tabs -->
+        <div class="tabs">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab1-1" data-toggle="tab">Detalhes</a></li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tab-content">
+
+            <div class="tab-pane fade in active" id="tab1-1">
+              <div class="row">
+                <div class="col-sm-6 col-md-6">
+                  <h4>Informações Extras</h4>
+                  <div class="list list__arrow2">
+                    <ul>
+                      <li>
+                        <b><%= t('activerecord.attributes.feedback.contribution_to_sales') %>:</b> <%= number_to_currency(@contribution_to_sales_sum) %>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <h4>Motivos de desligamento (acumulado)</h4>
+                  <div class="list list__arrow2">
+                    <ul>
+                      <% @termination_reasons_grouped.each do |termination_reason| %>
+                        <li>
+                          <b><%= t("activerecord.models.feedback.termination_reason.code#{termination_reason[0]}") %>:</b> <%= termination_reason[1] %>
+                        </li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- Additional Info Tabs / End -->
+      </div>
+    </div>
+
   </div>
 </section>
