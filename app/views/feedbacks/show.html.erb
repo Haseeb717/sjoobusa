@@ -105,20 +105,17 @@
                       <li><b><%= t('activerecord.attributes.feedback.start_at') %>:</b> <%= I18n.localize @feedback.start_at %></li>
                       <li><b><%= t('activerecord.attributes.feedback.end_at') %>:</b> <%= I18n.localize @feedback.end_at %></li>
                       <li><b><%= t('activerecord.attributes.feedback.service_type') %>:</b> <%= @feedback.service_type %></li>
-                      <li><b><%= t('activerecord.attributes.feedback.role') %>:</b> <%= @feedback.role %></li>
-                      <li><b><%= t('activerecord.attributes.feedback.termination_reason') %>:</b> <%= t("activerecord.models.feedback.termination_reason.code#{@feedback.termination_reason}") %></li>
                     </ul>
                   </div>
                 </div>
 
                 <div class="col-sm-6 col-md-6">
-                  <h4>Informações Extras</h4>
+                  <br><br>
                   <div class="list list__arrow2">
                     <ul>
+                      <li><b><%= t('activerecord.attributes.feedback.role') %>:</b> <%= @feedback.role %></li>
                       <li><b><%= t('activerecord.attributes.feedback.contribution_to_sales') %>:</b> <%= number_to_currency(@feedback.contribution_to_sales) %></li>
-                      <li><b><%= t('activerecord.attributes.feedback.unjustified_absences') %>:</b> <%= @feedback.unjustified_absences %></li>
-                      <li><b><%= t('activerecord.attributes.feedback.warnings') %>:</b> <%= @feedback.warnings %></li>
-                      <li><b><%= t('activerecord.attributes.feedback.late_for_work') %>:</b> <%= @feedback.late_for_work %></li>
+                      <li><b><%= t('activerecord.attributes.feedback.termination_reason') %>:</b> <%= t("activerecord.models.feedback.termination_reason.code#{@feedback.termination_reason}") %></li>
                     </ul>
                   </div>
                 </div>
