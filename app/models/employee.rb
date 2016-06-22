@@ -8,6 +8,64 @@ class Employee < ActiveRecord::Base
 
   validate :cpf_unique
 
+  def avg_commitment_score
+    Feedback.where(employee_id: id)
+      .group(:employee_id)
+      .average(:commitment_score)[1] ||= 0
+  end
+
+  def avg_excellence_score
+    Feedback.where(employee_id: id)
+      .group(:employee_id)
+      .average(:excellence_score)[1] ||= 0
+  end
+
+  def avg_productivity_score
+    Feedback.where(employee_id: id)
+      .group(:employee_id)
+      .average(:productivity_score)[1] ||= 0
+  end
+
+  def avg_leadership_score
+    Feedback.where(employee_id: id)
+      .group(:employee_id)
+      .average(:leadership_score)[1] ||= 0
+  end
+
+  def avg_proactivity_score
+    Feedback.where(employee_id: id)
+      .group(:employee_id)
+      .average(:proactivity_score)[1] ||= 0
+  end
+
+  def avg_teamwork_score
+    Feedback.where(employee_id: id)
+      .group(:employee_id)
+      .average(:teamwork_score)[1] ||= 0
+  end
+
+  def avg_flexibility_score
+    Feedback.where(employee_id: id)
+      .group(:employee_id)
+      .average(:flexibility_score)[1] ||= 0
+  end
+
+  def recommendation_score
+    (avg_commitment_score + avg_excellence_score + avg_productivity_score + avg_leadership_score + avg_proactivity_score + avg_teamwork_score + avg_flexibility_score) / 7
+  end
+
+  def self.recommendation_status score
+    if score < 1.25
+      return 'default'
+    elsif score < 2.5
+      return 'danger'
+    elsif score < 3.75
+      return 'info'
+    else
+      return 'success'
+    end
+  end
+
   def cpf_unique
     if self.cpf and !self.cpf.to_s.empty? and Employee.where(cpf: self.cpf).where('id <> ?', self.id || 0).first
       errors.add(:cpf, "já está cadastrado")

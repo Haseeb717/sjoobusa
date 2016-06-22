@@ -27,49 +27,16 @@ class EmployeesController < ApplicationController
   def show
     @can_add_feedback = Feedback.where(employee_id: params[:id], company_id: current_company.id).count == 0
 
-    # TODO: Refactor
+    # Scores
+    @avg_commitment_score = @employee.avg_commitment_score * 20
+    @avg_excellence_score = @employee.avg_excellence_score * 20
+    @avg_productivity_score = @employee.avg_productivity_score * 20
+    @avg_leadership_score = @employee.avg_leadership_score  * 20
+    @avg_proactivity_score = @employee.avg_proactivity_score * 20
+    @avg_teamwork_score = @employee.avg_teamwork_score * 20
+    @avg_flexibility_score = @employee.avg_flexibility_score * 20
 
-    # Commitment
-    avg_commitment_score = (Feedback.where(employee_id: params[:id])
-                                    .group(:employee_id)
-                                    .average(:commitment_score)[1] ||= 0)
-    @avg_commitment_score =  avg_commitment_score * 20
-
-    # Excellence
-    avg_excellence_score = (Feedback.where(employee_id: params[:id])
-                                    .group(:employee_id)
-                                    .average(:excellence_score)[1] ||= 0)
-    @avg_excellence_score = avg_excellence_score * 20
-
-    # Productivity
-    avg_productivity_score = (Feedback.where(employee_id: params[:id])
-                                    .group(:employee_id)
-                                    .average(:productivity_score)[1] ||= 0)
-    @avg_productivity_score = avg_productivity_score * 20
-
-    # Leadership
-    avg_leadership_score = (Feedback.where(employee_id: params[:id])
-                                    .group(:employee_id)
-                                    .average(:leadership_score)[1] ||= 0)
-    @avg_leadership_score = avg_leadership_score  * 20
-
-    # Proactivity
-    avg_proactivity_score = (Feedback.where(employee_id: params[:id])
-                                    .group(:employee_id)
-                                    .average(:proactivity_score)[1] ||= 0)
-    @avg_proactivity_score = avg_proactivity_score * 20
-
-    # Teamwork
-    avg_teamwork_score = (Feedback.where(employee_id: params[:id])
-                                  .group(:employee_id)
-                                  .average(:teamwork_score)[1] ||= 0)
-    @avg_teamwork_score = avg_teamwork_score * 20
-
-    # Flexibility
-    avg_flexibility_score = (Feedback.where(employee_id: params[:id])
-                                    .group(:employee_id)
-                                    .average(:flexibility_score)[1] ||= 0)
-    @avg_flexibility_score = avg_flexibility_score * 20
+    @recommendation_status = Employee.recommendation_status(@employee.recommendation_score)
 
     # Termination Reasons
     @termination_reasons_grouped = Feedback.where(employee_id: params[:id])
@@ -82,20 +49,6 @@ class EmployeesController < ApplicationController
                                     .order('sum_contribution_to_sales DESC')
                                     .sum(:contribution_to_sales)
     @contribution_to_sales_sum = (contribution_to_sales_sum.count > 0) ? contribution_to_sales_sum.first[1] : 0
-
-
-    # Final score (Recommendation)
-    final_score = (avg_commitment_score + avg_excellence_score + avg_productivity_score + avg_leadership_score + avg_proactivity_score + avg_teamwork_score + avg_flexibility_score) / 7
-
-    if final_score < 1.25
-      @final_score_status = 'default'
-    elsif final_score < 2.5
-      @final_score_status = 'danger'
-    elsif final_score < 3.75
-      @final_score_status = 'info'
-    else
-      @final_score_status = 'success'
-    end
   end
 
   # GET /employees/new
