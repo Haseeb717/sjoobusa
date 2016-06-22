@@ -46,11 +46,8 @@
                 </div>
                 <div class="rating">
                   <div class="rating-stars">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
+                      <% @recommendation_status = Employee.recommendation_status(feedback.employee.recommendation_score) %>
+                      <span class="label label-<%= @recommendation_status %>"><%= t("activerecord.models.employee.recommendation.#{@recommendation_status}") %></span>
                   </div>
                   <div class="reviews-num"><%= feedback.employee.feedbacks.count %> Avaliações</div>
                 </div>
