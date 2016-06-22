@@ -13,12 +13,13 @@ class EmployeesController < ApplicationController
   end
 
   def search_result
-    @employees = Employee.where(employee_params)
     @cpf = Cpf.new(employee_params[:cpf])
 
     unless @cpf.valido?
       redirect_to search_employees_url, notice: 'CPF inválido'
     end
+
+    @employees = Employee.where(cpf: @cpf)
   end
 
   # GET /employees/1
