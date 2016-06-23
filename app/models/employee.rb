@@ -11,43 +11,43 @@ class Employee < ActiveRecord::Base
   def avg_commitment_score
     Feedback.where(employee_id: id)
       .group(:employee_id)
-      .average(:commitment_score)[1] ||= 0
+      .average(:commitment_score)[id] ||= 0
   end
 
   def avg_excellence_score
     Feedback.where(employee_id: id)
       .group(:employee_id)
-      .average(:excellence_score)[1] ||= 0
+      .average(:excellence_score)[id] ||= 0
   end
 
   def avg_productivity_score
     Feedback.where(employee_id: id)
       .group(:employee_id)
-      .average(:productivity_score)[1] ||= 0
+      .average(:productivity_score)[id] ||= 0
   end
 
   def avg_leadership_score
     Feedback.where(employee_id: id)
       .group(:employee_id)
-      .average(:leadership_score)[1] ||= 0
+      .average(:leadership_score)[id] ||= 0
   end
 
   def avg_proactivity_score
     Feedback.where(employee_id: id)
       .group(:employee_id)
-      .average(:proactivity_score)[1] ||= 0
+      .average(:proactivity_score)[id] ||= 0
   end
 
   def avg_teamwork_score
     Feedback.where(employee_id: id)
       .group(:employee_id)
-      .average(:teamwork_score)[1] ||= 0
+      .average(:teamwork_score)[id] ||= 0
   end
 
   def avg_flexibility_score
     Feedback.where(employee_id: id)
       .group(:employee_id)
-      .average(:flexibility_score)[1] ||= 0
+      .average(:flexibility_score)[id] ||= 0
   end
 
   def recommendation_score

@@ -48,7 +48,7 @@ class EmployeesController < ApplicationController
                                     .group(:employee_id)
                                     .order('sum_contribution_to_sales DESC')
                                     .sum(:contribution_to_sales)
-    @contribution_to_sales_sum = (contribution_to_sales_sum.count > 0) ? contribution_to_sales_sum.first[1] : 0
+    @contribution_to_sales_sum = (contribution_to_sales_sum.count > 0) ? contribution_to_sales_sum.first[params[:id].to_i] : 0
   end
 
   # GET /employees/new
