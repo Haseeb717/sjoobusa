@@ -158,10 +158,11 @@
 
           <fieldset>
             <%= f.label :contribution_to_sales do %>
-              <%= t('activerecord.attributes.feedback.contribution_to_sales') %> <span class="required">*</span>
+              <%= t('activerecord.attributes.feedback.contribution_to_sales') %>
             <% end %>
             <div class="field">
               <%= f.number_field :contribution_to_sales, class: 'form-control', placeholder: 'Valor R$' %>
+              <%= f.check_box :contribution_to_sales_do_not_apply, {}, "true", "false" %> <%= t('views.feedback.contribution_to_sales.do_not_apply') %>
             </div>
           </fieldset>
 

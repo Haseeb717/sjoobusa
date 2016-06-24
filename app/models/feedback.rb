@@ -2,6 +2,8 @@ class Feedback < ActiveRecord::Base
   belongs_to :company
   belongs_to :employee
 
+  attr_accessor :contribution_to_sales_do_not_apply
+
   validates :service_type, presence: true
   validates :role, presence: true
   validates :start_at, presence: true
@@ -13,11 +15,11 @@ class Feedback < ActiveRecord::Base
   validates :proactivity_score, presence: true
   validates :teamwork_score, presence: true
   validates :flexibility_score, presence: true
-  validates :contribution_to_sales, presence: true
   validates :termination_reason, presence: true
 
   validate :end_after_start
   validate :end_after_today
+  validate :contribution_to_sales_do_not_apply_validation
 
   def commitment_score_percentage
     commitment_score * 20
@@ -61,6 +63,14 @@ class Feedback < ActiveRecord::Base
 
       if end_at > Date.today
         errors.add(:end_at, "não pode ser posterior a data de hoje")
+      end
+    end
+
+    def contribution_to_sales_do_not_apply_validation
+      return if contribution_to_sales_do_not_apply == "true"
+
+      if contribution_to_sales.blank?
+        errors.add(:contribution_to_sales, "não pode ficar em branco")
       end
     end
 end

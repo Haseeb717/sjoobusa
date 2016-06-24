@@ -73,6 +73,26 @@ class FeedbacksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def feedback_params
-      params.require(:feedback).permit(:company_id, :employee_id, :service_type, :role, :start_at, :end_at, :termination_reason, :productivity_score, :commitment_score, :excellence_score, :leadership_score, :proactivity_score, :teamwork_score, :flexibility_score, :contribution_to_sales, :unjustified_absences, :warnings, :late_for_work)
+      params.require(:feedback).permit(
+        :company_id,
+        :employee_id,
+        :service_type,
+        :role,
+        :start_at,
+        :end_at,
+        :termination_reason,
+        :productivity_score,
+        :commitment_score,
+        :excellence_score,
+        :leadership_score,
+        :proactivity_score,
+        :teamwork_score,
+        :flexibility_score,
+        :contribution_to_sales,
+        :unjustified_absences,
+        :warnings,
+        :late_for_work,
+        :contribution_to_sales_do_not_apply
+      )
     end
 end

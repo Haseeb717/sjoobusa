@@ -133,9 +133,11 @@
                   <h4>Informações Extras</h4>
                   <div class="list list__arrow2">
                     <ul>
-                      <li>
-                        <b><%= t('activerecord.attributes.feedback.contribution_to_sales') %>:</b> <%= number_to_currency(@contribution_to_sales_sum) %>
-                      </li>
+                      <% if @contribution_to_sales_sum %>
+                        <li><b><%= t('activerecord.attributes.feedback.contribution_to_sales') %>:</b> <%= number_to_currency(@contribution_to_sales_sum) %></li>
+                      <% else %>
+                        <li><b><%= t('activerecord.attributes.feedback.contribution_to_sales') %>:</b> <%= t('views.feedback.contribution_to_sales.did_not_work_with_sales') %></li>
+                      <% end %>
                     </ul>
                   </div>
 

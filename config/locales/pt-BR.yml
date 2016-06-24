@@ -1,6 +1,9 @@
 pt-BR:
   views:
     feedback:
+      contribution_to_sales:
+        do_not_apply: Não se aplica. Não exerceu cargo de vendas.
+        did_not_work_with_sales: Não exerceu cargo de vendas.
       termination_reason:
         code1: Redução de custos ou equipe
         code2: Baixa performance nas tarefas e metas da empresa
