@@ -56,7 +56,11 @@
               <%= t('activerecord.attributes.feedback.start_at') %> <span class="required">*</span>
             <% end %>
             <div class="field">
-              <%= f.date_select :start_at, class: 'form-control' %>
+              <%= f.date_select :start_at,
+                start_year: Date.today.year - 20,
+                end_year: Date.today.year,
+                class: 'form-control'
+              %>
             </div>
           </fieldset>
 
@@ -65,7 +69,11 @@
               <%= t('activerecord.attributes.feedback.end_at') %> <span class="required">*</span>
             <% end %>
             <div class="field">
-              <%= f.date_select :end_at, class: 'form-control' %>
+              <%= f.date_select :end_at,
+                start_year: Date.today.year - 20,
+                end_year: Date.today.year,
+                class: 'form-control'
+              %>
             </div>
           </fieldset>
 
