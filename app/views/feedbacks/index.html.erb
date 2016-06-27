@@ -26,15 +26,8 @@
         <ul class="job_listings">
           <% @feedbacks.each do |feedback| %>
             <li class="job_listing">
-              <%= link_to employee_feedback_path(employee_id: feedback.employee_id, id: feedback.id) do %>
-                <div class="job_img">
-                  <% if feedback.employee.photo %>
-                    <%= image_tag "samples/#{feedback.employee.photo}", alt: feedback.employee.name, class: 'company_logo' %>
-                  <% else %>
-                    <%= image_tag "samples/person-shadow.jpg", alt: feedback.employee.name, class: 'company_logo' %>
-                  <% end %>
-                </div>
-                <div class="position" style="width: 40%;">
+              <%= link_to employee_feedback_path(employee_id: feedback.employee_id, id: feedback.id), {:style => 'display: table;'} do %>
+                <div class="position" style="width: 40%; padding: 0 0px">
                   <h3><%= feedback.employee.name %></h3>
                   <div class="company">
                     <strong><%= "#{feedback.service_type} / #{feedback.role}" %></strong>
