@@ -22,14 +22,7 @@
         <ul class="job_listings">
           <% @employees.each do |employee| %>
             <li class="job_listing">
-              <%= link_to employee do %>
-                <div class="job_img">
-                  <% if employee.photo %>
-                    <%= image_tag "samples/#{employee.photo}", alt: employee.name, class: 'company_logo' %>
-                  <% else %>
-                    <%= image_tag "samples/person-shadow.jpg", alt: employee.name, class: 'company_logo' %>
-                  <% end %>
-                </div>
+              <%= link_to employee, {:style => 'display: table;'} do %>
                 <div class="position" style="width: 40%;">
                   <h3><%= employee.name %></h3>
                   <div class="company">
