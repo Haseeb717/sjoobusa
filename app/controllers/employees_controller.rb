@@ -15,9 +15,9 @@ class EmployeesController < ApplicationController
   def search_result
     @cpf = Cpf.new(employee_params[:cpf])
 
-    unless @cpf.valido?
-      redirect_to search_employees_url, notice: 'CPF inválido'
-    end
+    # unless @cpf.valido?
+    #   redirect_to search_employees_url, notice: 'CPF inválido'
+    # end
 
     @employees = Employee.where(cpf: @cpf)
   end

@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def after_sign_in_path_for resource
-    feedbacks_path
+  	if resource.class == AdminUser
+      admin_root_path
+    else
+      feedbacks_path
+    end
   end
 end

@@ -53,12 +53,15 @@ gem 'owlcarousel-rails'
 
 gem 'devise'
 
+gem 'paperclip'
+gem 'aws-sdk'
+
 gem "letter_opener"
 
 gem 'brazilian-rails'
 
 gem 'rails-i18n', '~> 4.0.0'
-
+gem 'activeadmin', github: 'gregbell/active_admin'
 # Puma webserver
 gem 'puma'
 

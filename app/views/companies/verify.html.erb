@@ -1,0 +1,71 @@
+<section class="page-content">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+
+        <% unless alert.blank? %>
+          <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+            <strong><%= alert %></strong>
+          </div>
+        <% end %>
+
+        <% unless notice.blank? %>
+          <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="fa fa-times"></i></button>
+
+            <% if notice.is_a?(Array) %>
+              <ul>
+                <% notice.each do |msg| %>
+                  <li>
+                    <strong><%= msg %></strong>
+                  </li>
+                <% end %>
+              </ul>
+            <% else %>
+              <ul>
+                <li>
+                  <strong><%= notice %></strong>
+                </li>
+              </ul>
+            <% end %>
+          </div>
+        <% end %>
+
+        <div class="spacer-lg visible-sm visible-xs"></div>
+
+        <div class="box">
+          <h3>Empresa</h3>
+          <%= form_for(@company, url: company_update_verification_path(@company), html: { role: 'form',multipart: true }) do |f| %>
+            <div class="form-group">
+              <%= f.label :bill_document do %>
+                Current Phone Bill <span class="required">*</span>
+              <% end %>
+              <%= f.file_field :bill_document, autofocus: true, class: 'form-control' %>
+            </div>
+            
+            <div class="form-group">
+              <%= f.label :cnpj_document do %>
+                CNPJ Card <span class="required">*</span>
+              <% end %>
+              <%= f.file_field :cnpj_document, class: 'form-control' %>
+            </div>
+            <%= f.hidden_field :cnpj, :value => @company.cnpj %>
+            <%= f.hidden_field :name, :value => @company.name %>
+            <%= f.hidden_field :trade, :value => @company.trade %>
+            <%= f.hidden_field :state_identification, :value => @company.state_identification %>
+            <%= f.hidden_field :email, :value => @company.email %>
+            <%= f.hidden_field :phone, :value => @company.phone %>
+            <%= f.hidden_field :area, :value => @company.area %>
+
+            
+
+            <%= f.submit "Cadastrar", class: 'btn btn-primary' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

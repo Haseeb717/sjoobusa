@@ -61,6 +61,21 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def verify
+    @company = Company.find(params[:company_id])
+  end
+
+  def update_verification
+    @company = Company.find(params[:company_id])
+    respond_to do |format|
+      if @company.update(company_params)
+        format.html { redirect_to root_path, notice: 'Company was successfully updated.' }
+      else
+        format.html { render :verify }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_company
@@ -69,6 +84,6 @@ class CompaniesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
-      params.require(:company).permit(:name, :trade, :cnpj, :state_identification, :area, :email, :phone)
+      params.require(:company).permit(:name, :trade, :cnpj, :state_identification, :area, :email, :phone,:bill_document,:cnpj_document)
     end
 end

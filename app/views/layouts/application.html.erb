@@ -78,6 +78,9 @@
               <ul class="header-top-nav header-top-nav__tertiary">
                 <% if company_signed_in? %>
                   <li>
+                    <%=  link_to 'Verify company', company_verify_path(current_company) %>
+                  </li>
+                  <li>
                     <%= "#{current_company.trade} (#{current_company.email})" %>&nbsp;&nbsp;&nbsp;
                   </li>
                   <li>

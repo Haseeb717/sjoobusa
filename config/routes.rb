@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :companies, :controllers => { registrations: 'registrations' }
 
   resources :feedbacks, only: [:index]
@@ -10,7 +12,10 @@ Rails.application.routes.draw do
     resources :feedbacks, except: [:index]
   end
 
-  resources :companies
+  resources :companies do
+    get 'verify'
+    patch 'update_verification'
+  end
 
   root 'page#home'
   # root :to => redirect('/companies/sign_in')
