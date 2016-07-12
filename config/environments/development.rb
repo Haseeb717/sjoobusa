@@ -26,7 +26,7 @@ Rails.application.configure do
   #   access_key_id: 'AKIAJDX6ZU6KHOBPNIQA',
   #   secret_access_key: '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',
   # }
-}
+  #}
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

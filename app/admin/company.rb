@@ -35,6 +35,11 @@ ActiveAdmin.register Company do
 	    row :cnpj
 	    row :state_identification
 	    row :area
+      row "Bill" do |m|
+        span do
+          render(:partial => "frame", :locals => {:company=>m})
+        end
+      end
 	    row :phone
 	    row :bill_document_file_name
 	    row :cnpj_document_file_name
