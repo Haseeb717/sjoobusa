@@ -18,15 +18,15 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :letter_opener
   
-  # config.paperclip_defaults = {
-  # storage: :s3,
-  # :s3_region => 'ap-southeast-2',
-  # s3_credentials: {
-  #   bucket: 'sjoobing',
-  #   access_key_id: 'AKIAJDX6ZU6KHOBPNIQA',
-  #   secret_access_key: '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',
-  # }
-  #}
+  config.paperclip_defaults = {
+  storage: :s3,
+  :s3_region => 'ap-southeast-1',
+    s3_credentials: {
+      bucket: 'sjoobing',
+      access_key_id: 'AKIAJDX6ZU6KHOBPNIQA',
+      secret_access_key: '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',
+    }
+  }
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
