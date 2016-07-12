@@ -41,6 +41,12 @@ pt-BR:
         email: E-mail
         phone: Telefone
         password: Senha
+        bill_document: Documento bill
+        bill_document_file_name: Bill nome de arquivo de documento
+        cnpj_document: Documento CNPJ
+        cnpj_document_file_name: CNPJ nome de arquivo de documento
+        verify: Verificar
+        block: Quadra
         password_confirmation: Confirmar Senha
       employee:
         cpf: CPF

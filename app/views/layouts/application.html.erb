@@ -77,9 +77,11 @@
             <div class="menu-container">
               <ul class="header-top-nav header-top-nav__tertiary">
                 <% if company_signed_in? %>
-                  <li>
-                    <%=  link_to 'Verify company', company_verify_path(current_company) %>
-                  </li>
+                  <% if current_company.cnpj_document_file_size.nil? || current_company.bill_document_file_size.nil? %>
+                    <li>
+                      <%=  link_to 'Verifique Empresa', company_verify_path(current_company) %>
+                    </li>
+                  <% end %>
                   <li>
                     <%= "#{current_company.trade} (#{current_company.email})" %>&nbsp;&nbsp;&nbsp;
                   </li>

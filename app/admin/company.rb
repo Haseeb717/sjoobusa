@@ -35,9 +35,26 @@ ActiveAdmin.register Company do
 	    row :cnpj
 	    row :state_identification
 	    row :area
-      row "Bill" do |m|
-        span do
-          render(:partial => "frame", :locals => {:company=>m})
+      row "Bill Document" do |m|
+        if !current_company.bill_document_file_size.nil?
+          span do
+            if !m.bill_document_content_type.start_with? "image"
+              render(:partial => "bill_frame", :locals => {:company=>m})
+            else
+              image_tag(m.bill_document.url(), :width => 300, :height => 150)
+            end
+          end
+        end
+      end
+      row "Cnpj Document" do |m|
+        if !current_company.cnpj_document_file_size.nil?
+          span do
+            if !m.cnpj_document_content_type.start_with? "image"
+              render(:partial => "cnpj_frame", :locals => {:company=>m})
+            else
+              image_tag(m.cnpj_document.url(), :width => 300, :height => 150)
+            end
+          end
         end
       end
 	    row :phone
