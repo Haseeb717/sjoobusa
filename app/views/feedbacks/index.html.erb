@@ -17,7 +17,11 @@
       <div class="row">
         <div class="col-md-12">
             <p>
-              Você ainda não avaliou nenhum profissional, caso deseje avaliar, <%= link_to 'clique aqui', search_employees_path %>.
+              <% if !current_company.bill_document_file_size.nil? %>
+                Você ainda não avaliou nenhum profissional, caso deseje avaliar, <%= link_to 'clique aqui', search_employees_path %>
+              <% else %>
+                Você não classificou nenhum profissional , se você quiser rever , primeiro <%= link_to 'verifique', company_verify_path(current_company), class: "verify" %> sua empresa.
+              <% end %>
             </p>
         </div>
       </div>
