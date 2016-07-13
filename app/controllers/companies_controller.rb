@@ -69,7 +69,7 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:company_id])
     respond_to do |format|
       if @company.update(company_params)
-        format.html { redirect_to root_path, notice: 'Company was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Aguarde a confirmação de verificação de sua empresa.' }
       else
         format.html { render :verify }
       end
