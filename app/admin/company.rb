@@ -36,7 +36,7 @@ ActiveAdmin.register Company do
 	    row :state_identification
 	    row :area
       row "Bill Document" do |m|
-        if !current_company.bill_document_file_size.nil?
+        if !m.bill_document_file_size.nil?
           span do
             if !m.bill_document_content_type.start_with? "image"
               render(:partial => "bill_frame", :locals => {:company=>m})
@@ -47,7 +47,7 @@ ActiveAdmin.register Company do
         end
       end
       row "Cnpj Document" do |m|
-        if !current_company.cnpj_document_file_size.nil?
+        if !m.cnpj_document_file_size.nil?
           span do
             if !m.cnpj_document_content_type.start_with? "image"
               render(:partial => "cnpj_frame", :locals => {:company=>m})
