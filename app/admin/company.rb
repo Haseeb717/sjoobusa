@@ -1,17 +1,21 @@
 ActiveAdmin.register Company do
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
+permit_params :name, :email, :trade,:cnpj,:state_identification, :verify, :block
+
+  form do |f|
+    f.inputs 'Company' do
+      f.input :name
+      f.input :email
+      f.input :trade
+      f.input :cnpj
+      f.input :state_identification
+      f.input :verify
+      f.input :block
+    end
+    f.actions
+  end
+
+
   index do
     selectable_column
     column :name
@@ -35,6 +39,11 @@ ActiveAdmin.register Company do
 	    row :cnpj
 	    row :state_identification
 	    row :area
+      row :phone
+      row :bill_document_file_name
+      row :cnpj_document_file_name
+      row :verify
+      row :block
       row "Bill Document" do |m|
         if !m.bill_document_file_size.nil?
           span do
@@ -57,14 +66,17 @@ ActiveAdmin.register Company do
           end
         end
       end
-	    row :phone
-	    row :bill_document_file_name
-	    row :cnpj_document_file_name
-	    row :cnpj
-	    row :verify
-	    row :block
     end
   end
 
+  filter :name
+  filter :email
+  filter :trade
+  filter :cnpj
+  filter :state_identification
+  filter :area
+  filter :phone
+  filter :verify
+  filter :block
 
 end

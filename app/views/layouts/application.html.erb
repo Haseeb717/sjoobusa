@@ -77,6 +77,15 @@
             <div class="menu-container">
               <ul class="header-top-nav header-top-nav__tertiary">
                 <% if company_signed_in? %>
+                  <% if current_company.verify? %>
+                    <li>
+                      <span class="pendete">PENDENTE</span>
+                    </li>
+                  <% else %>
+                    <li>
+                      <span class="verificada"> VERIFICADA</span>
+                    </li>
+                  <% end %>
                   <% if current_company.cnpj_document_file_size.nil? || current_company.bill_document_file_size.nil? %>
                     <li>
                       <%=  link_to 'Verifique Empresa', company_verify_path(current_company), class: "verify"  %>

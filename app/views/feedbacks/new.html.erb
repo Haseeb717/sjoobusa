@@ -169,7 +169,7 @@
               <%= t('activerecord.attributes.feedback.contribution_to_sales') %>
             <% end %>
             <div class="field">
-              <%= f.number_field :contribution_to_sales, class: 'form-control', placeholder: 'Por favor , digite somente números' %>
+              <%= f.number_field :contribution_to_sales, class: 'form-control', placeholder: 'Por favor , digite somente números',:pattern=>"[0-9]" %>
               <%= f.check_box :contribution_to_sales_do_not_apply, {}, "true", "false" %> <%= t('views.feedback.contribution_to_sales.do_not_apply') %>
             </div>
           </fieldset>
