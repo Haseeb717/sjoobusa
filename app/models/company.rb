@@ -5,6 +5,8 @@ class Company < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
 
+         has_many :feedbacks,dependent: :destroy
+
   has_attached_file :bill_document
   validates_attachment :bill_document, :content_type => {:content_type => %w(image/jpeg image/jpg image/png application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document)}
 

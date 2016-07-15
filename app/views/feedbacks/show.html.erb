@@ -106,7 +106,7 @@
                     <ul>
                       <li><b><%= t('activerecord.attributes.feedback.role') %>:</b> <%= @feedback.role %></li>
                       <% if @feedback.contribution_to_sales %>
-                        <li><b><%= t('activerecord.attributes.feedback.contribution_to_sales') %>:</b> <%= number_to_currency(@feedback.contribution_to_sales) %></li>
+                        <li><b><%= t('activerecord.attributes.feedback.contribution_to_sales') %>:</b> <%= number_to_currency(@feedback.contribution_to_sales, separator: '.') %></li>
                       <% else %>
                         <li><b><%= t('activerecord.attributes.feedback.contribution_to_sales') %>:</b> <%= t('views.feedback.contribution_to_sales.did_not_work_with_sales') %></li>
                       <% end %>
