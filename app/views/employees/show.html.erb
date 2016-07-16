@@ -7,8 +7,12 @@
           <fieldset>
             <div class="field account-sign-in">
               <p>
-                <%= link_to new_employee_feedback_path(@employee.id), class: 'btn btn-primary btn-sm' do %>
-                  <i class="fa fa-plus"></i> Avaliar profissional
+                <% if !current_company.verify? %>
+                  Você não avaliou nenhum profissional ainda, para sua ativação por favor primeiro ajude-nos a <%= link_to 'verifique', company_verify_path(current_company), class: "verify" %> sua empresa
+                <% else %>
+                  <%= link_to new_employee_feedback_path(@employee.id), class: 'btn btn-primary btn-sm' do %>
+                    <i class="fa fa-plus"></i> Avaliar profissional
+                  <% end %>
                 <% end %>
               </p>
             </div>
