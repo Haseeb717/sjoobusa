@@ -8,7 +8,8 @@
             <div class="field account-sign-in">
               <p>
                 <% if !current_company.verify? %>
-                  Você não avaliou nenhum profissional ainda, para sua ativação por favor primeiro ajude-nos a <%= link_to 'verifique', company_verify_path(current_company), class: "verify" %> sua empresa
+                  Para avaliar um colaborador primeiro sua empresa necessita ter o status de verificada, por favor verifique sua empresa e aguarde o status de 
+                    <%= link_to 'VERIFICADA', company_verify_path(current_company), class: "verify" %>
                 <% else %>
                   <%= link_to new_employee_feedback_path(@employee.id), class: 'btn btn-primary btn-sm' do %>
                     <i class="fa fa-plus"></i> Avaliar profissional
@@ -129,7 +130,7 @@
                   <div class="list list__arrow2">
                     <ul>
                       <% if @contribution_to_sales_sum %>
-                        <li><b><%= t('activerecord.attributes.feedback.contribution_to_sales') %>:</b> <%= number_to_currency(@contribution_to_sales_sum) %></li>
+                        <li><b><%= t('activerecord.attributes.feedback.contribution_to_sales') %>:</b> <%= number_to_currency(@contribution_to_sales_sum, precision: 3) %></li>
                       <% else %>
                         <li><b><%= t('activerecord.attributes.feedback.contribution_to_sales') %>:</b> <%= t('views.feedback.contribution_to_sales.did_not_work_with_sales') %></li>
                       <% end %>
