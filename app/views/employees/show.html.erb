@@ -8,8 +8,7 @@
             <div class="field account-sign-in">
               <p>
                 <% if !current_company.verify? %>
-                  Para avaliar um colaborador primeiro sua empresa necessita ter o status de verificada, por favor verifique sua empresa e aguarde o status de 
-                    <%= link_to 'VERIFICADA', company_verify_path(current_company), class: "verify" %>
+                  Para avaliar um colaborador primeiro sua empresa necessita ter o status de verificada, por favor verifique sua empresa e aguarde o status de <%= link_to 'VERIFICADA', company_verify_path(current_company), class: "verify" %>
                 <% else %>
                   <%= link_to new_employee_feedback_path(@employee.id), class: 'btn btn-primary btn-sm' do %>
                     <i class="fa fa-plus"></i> Avaliar profissional

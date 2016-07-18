@@ -28,8 +28,8 @@ Rails.application.configure do
   :s3_region => 'ap-southeast-1',
     s3_credentials: {
       bucket: 'sjoobing',
-      access_key_id: 'AKIAJDX6ZU6KHOBPNIQA',
-      secret_access_key: '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',
+      access_key_id: ENV['S3_KEY'],
+      secret_access_key: ENV['S3_SECRET'],
     }
   }
   # Compress JavaScripts and CSS.
