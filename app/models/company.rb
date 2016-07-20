@@ -5,12 +5,12 @@ class Company < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
 
-         has_many :feedbacks,dependent: :destroy
+  has_many :feedbacks,dependent: :destroy
 
-  has_attached_file :bill_document
+  has_attached_file :bill_document, styles: { small: "250x250>"}
   validates_attachment :bill_document, :content_type => {:content_type => %w(image/jpeg image/jpg image/png application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document)}
 
-  has_attached_file :cnpj_document
+  has_attached_file :cnpj_document, styles: { small: "250x250>"}
   validates_attachment :cnpj_document, :content_type => {:content_type => %w(image/jpeg image/jpg image/png application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document)}
 
   validates :cnpj, presence: true

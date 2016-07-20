@@ -50,7 +50,7 @@ permit_params :name, :email, :trade,:cnpj,:state_identification, :verify, :block
             if !m.bill_document_content_type.start_with? "image"
               render(:partial => "bill_frame", :locals => {:company=>m})
             else
-              image_tag(m.bill_document.url(), :width => 300, :height => 150)
+              image_tag(m.bill_document.url(:small))
             end
           end
         end
@@ -61,7 +61,7 @@ permit_params :name, :email, :trade,:cnpj,:state_identification, :verify, :block
             if !m.cnpj_document_content_type.start_with? "image"
               render(:partial => "cnpj_frame", :locals => {:company=>m})
             else
-              image_tag(m.cnpj_document.url(), :width => 300, :height => 150)
+              image_tag(m.cnpj_document.url(:small))
             end
           end
         end
