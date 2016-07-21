@@ -129,7 +129,7 @@
                   <div class="list list__arrow2">
                     <ul>
                       <% if @contribution_to_sales_sum %>
-                        <li><b><%= t('activerecord.attributes.feedback.contribution_to_sales') %>:</b> <%= number_to_currency(@contribution_to_sales_sum, precision: 3) %></li>
+                        <li><b><%= t('activerecord.attributes.feedback.contribution_to_sales') %>:</b> <%= number_to_currency(@contribution_to_sales_sum, precision: 0) %></li>
                       <% else %>
                         <li><b><%= t('activerecord.attributes.feedback.contribution_to_sales') %>:</b> <%= t('views.feedback.contribution_to_sales.did_not_work_with_sales') %></li>
                       <% end %>
