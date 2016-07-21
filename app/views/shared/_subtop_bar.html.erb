@@ -1,0 +1,33 @@
+<div class="header-main">
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo">
+        <a href="#"><%= image_tag "logo.png", alt: "Handyman" %></a>
+      </div>
+      <!-- Logo / End -->
+
+      <!-- <button type="button" class="navbar-toggle">
+        <i class="fa fa-bars"></i>
+      </button> -->
+      <div class="" style="    padding: 25px 0px; position: absolute; right: 20px;" >
+        <ul class="flexnav">
+          <% if company_signed_in? %>
+            <li class="<%= is_active?(feedbacks_path) %>"><%= link_to "Minhas avaliações", feedbacks_path %></li>
+            <li class="<%= is_active?(search_employees_path) %>"><%= link_to "Consultar ou Avaliar Profissional", search_employees_path %></li>
+          <% else %>
+            <li class="<%= is_active?(root_path) %>"><%= link_to "Home", root_path %></li>
+            <!-- <li class="<%= is_active?(page_pricing_path) %>"><%= link_to "Planos", page_pricing_path %></li> -->
+            <li class="<%= is_active?(page_faq_path) %>"><%= link_to "Dúvidas", page_faq_path %></li>
+          <% end %>
+        </ul>
+      </div>
+      <!-- Navigation -->
+      <nav class="nav-main">
+        <div class="nav-main-inner">
+
+        </div>
+      </nav>
+      <!-- Navigation / End -->
+
+    </div>
+  </div>

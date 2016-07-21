@@ -32,7 +32,7 @@
         'hover':              true            // would you like hover support?
     });
   </script>
-  
+
 </head>
 <body>
 
@@ -42,112 +42,9 @@
     <header class="header header-menu-fullw">
 
       <!-- Header Top Bar -->
-      <div class="header-top">
-        <div class="container">
-          <div class="header-top-left">
-            <button class="btn btn-sm btn-default menu-link menu-link__secondary">
-              <i class="fa fa-bars"></i>
-            </button>
-            <div class="menu-container">
-              <ul class="header-top-nav header-top-nav__secondary">
-                <li>
-                  <a href="https://www.facebook.com/sjoobs" target="_blank">
-                    <i class="fa fa-facebook"></i> <span class="nav-label">Facebook</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://plus.google.com/u/0/114348585942771126882" target="_blank">
-                    <i class="fa fa-google-plus"></i> <span class="nav-label">Google+</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://twitter.com/SJOOBSLLC" target="_blank">
-                    <i class="fa fa-twitter"></i> <span class="nav-label">Twitter</span>
-                  </a>
-                </li>
-                <!-- <li><a href="#"><i class="fa fa-pinterest"></i> <span class="nav-label">Pinterest</span></a></li> -->
-                <!-- <li><a href="#"><i class="fa fa-instagram"></i> <span class="nav-label">Instagram</span></a></li> -->
-              </ul>
-            </div>
-          </div>
-          <div class="header-top-right">
-            <button class="btn btn-sm btn-default menu-link menu-link__tertiary">
-              <i class="fa fa-user"></i>
-            </button>
-            <div class="menu-container">
-              <ul class="header-top-nav header-top-nav__tertiary">
-                <% if company_signed_in? %>
-                  <% if current_company.verify? && !current_company.cnpj_document_file_size.nil? && !current_company.bill_document_file_size.nil? %>
-                    <li>
-                      <span class="verificada"> VERIFICADA</span>
-                    </li>
-                  <% elsif !current_company.verify? && !current_company.cnpj_document_file_size.nil? && !current_company.bill_document_file_size.nil? %>
-                    <li>
-                      <span class="pendete">PENDENTE</span>
-                    </li>
-                  <% else %>
-                    <li>
-                      <%=  link_to 'Verifique Empresa', company_verify_path(current_company), class: "verify"  %>
-                    </li>
-                  <% end %>
-                  
-                  <li>
-                    <%= "#{current_company.trade} (#{current_company.email})" %>&nbsp;&nbsp;&nbsp;
-                  </li>
-                  <li>
-                    <%= link_to destroy_company_session_path, method: :delete do %>
-                      <i class="fa fa-sign-out"></i> <%= t(".sign_out", :default => "Sign out") %>
-                    <% end %>
-                  </li>
-                <% else %>
-                  <li>
-                    <%= link_to new_company_registration_path do %>
-                      <i class="fa fa-user-plus"></i> <%= t(".sign_up", :default => "Sign up") %>
-                    <% end %>
-                  </li>
-                  <li>
-                    <%= link_to new_company_session_path do %>
-                      <i class="fa fa-sign-in"></i> <%= t(".sign_in", :default => "Sign in") %>
-                    <% end %>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+      <%= render 'shared/top_bar' %>
       <!-- Header Top Bar / End -->
-      <div class="header-main">
-        <div class="container">
-          <!-- Logo -->
-          <div class="logo">
-            <a href="#"><%= image_tag "logo.png", alt: "Handyman" %></a>
-          </div>
-          <!-- Logo / End -->
-
-          <button type="button" class="navbar-toggle">
-            <i class="fa fa-bars"></i>
-          </button>
-
-          <!-- Navigation -->
-          <nav class="nav-main">
-            <div class="nav-main-inner">
-              <ul data-breakpoint="992" class="flexnav">
-                <% if company_signed_in? %>
-                  <li class="<%= is_active?(feedbacks_path) %>"><%= link_to "Minhas avaliações", feedbacks_path %></li>
-                  <li class="<%= is_active?(search_employees_path) %>"><%= link_to "Consultar ou Avaliar Profissional", search_employees_path %></li>
-                <% else %>
-                  <li class="<%= is_active?(root_path) %>"><%= link_to "Home", root_path %></li>
-                  <!-- <li class="<%= is_active?(page_pricing_path) %>"><%= link_to "Planos", page_pricing_path %></li> -->
-                  <li class="<%= is_active?(page_faq_path) %>"><%= link_to "Dúvidas", page_faq_path %></li>
-                <% end %>
-              </ul>
-            </div>
-          </nav>
-          <!-- Navigation / End -->
-
-        </div>
-      </div>
+      <%= render 'shared/subtop_bar' %>
 
     </header>
     <!-- Header / End -->

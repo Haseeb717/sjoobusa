@@ -73,7 +73,7 @@ body.bg1 {
   list-style: none;
   margin: 0;
 }
-@media (min-width: 992px) {
+// @media (min-width: 992px) {
   .header-top .header-top-nav {
     font-size: 10px;
     padding: 0;
@@ -208,7 +208,7 @@ body.bg1 {
     color: #333;
     margin-right: 5px;
   }
-}
+// }
 .header-top .header-top-left {
   text-align: left;
   width: 50%;
@@ -431,10 +431,10 @@ body.bg1 {
   background: #3b363a;
   margin: 0 -15px;
 }
-.flexnav.opacity {
-  opacity: 0;
-  filter: alpha(opacity=0);
-}
+// .flexnav.opacity {
+//   opacity: 0;
+//   filter: alpha(opacity=0);
+// }
 .flexnav.flexnav-show {
   max-height: 2000px;
   opacity: 1;
@@ -527,7 +527,7 @@ body.bg1 {
   content: "\f106";
 }
 /* Navigation styles - For Desktop */
-@media all and (min-width: 992px) {
+@media all and (min-width: 100px) {
   .flexnav {
     overflow: visible;
     text-align: right;
