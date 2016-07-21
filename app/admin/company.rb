@@ -47,22 +47,22 @@ permit_params :name, :email, :trade,:cnpj,:state_identification, :verify, :block
       row "Bill Document" do |m|
         if !m.bill_document_file_size.nil?
           span do
-            if !m.bill_document_content_type.start_with? "image"
+            # if !m.bill_document_content_type.start_with? "image"
               render(:partial => "bill_frame", :locals => {:company=>m})
-            else
-              image_tag(m.bill_document.url(:small))
-            end
+            # else
+            #   image_tag(m.bill_document.url(:small))
+            # end
           end
         end
       end
       row "Cnpj Document" do |m|
         if !m.cnpj_document_file_size.nil?
           span do
-            if !m.cnpj_document_content_type.start_with? "image"
+            # if !m.cnpj_document_content_type.start_with? "image"
               render(:partial => "cnpj_frame", :locals => {:company=>m})
-            else
-              image_tag(m.cnpj_document.url(:small))
-            end
+            # else
+            #   image_tag(m.cnpj_document.url(:small))
+            # end
           end
         end
       end
